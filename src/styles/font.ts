@@ -1,3 +1,5 @@
+import { asArray } from '@wowfinder/ts-utils';
+
 const fontSize = (pt: number): string => `
     font-size: ${pt}pt;
 `;
@@ -20,18 +22,13 @@ interface FontArgs {
     size?: number; // pt units
 }
 
-// TODO: Migrate to @wowfinder/ts-utils (> v0.1.1)
-function asArray<T>(value: T | T[]): T[] {
-    return Array.isArray(value) ? value : [value];
-}
-
 const font = ({ family, size }: FontArgs): string => {
     const props: string[] = [];
     if (family) {
         props.push(
             `font-family: ${asArray(family)
                 .filter(f => f)
-                .map(f => (/[-a-zA-Z0-9]+/.test(`${f}`) ? f : `"${f}"`))
+                .map(f => (/^[-a-zA-Z0-9]+$/.test(`${f}`) ? f : `"${f}"`))
                 .join(', ')};`,
         );
     }
