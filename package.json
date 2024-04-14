@@ -25,9 +25,8 @@
         "build:pre": "rimraf dist",
         "build:tsc": "tsc",
         "build:setup": "node dist/.setup.js",
-        "build:pack": "cd dist && yarn && yarn pack && mv package.tgz ../package.tgz",
+        "build:pack": "cd dist && yarn pack && mv package.tgz ../package.tgz",
         "build": "npm-run-all -s build:pre build:tsc build:setup build:pack",
-        "build:ci": "npm-run-all -s build:pre build:tsc build:setup",
         "prepublishOnly": "yarn version apply && yarn run checks:pedantic && yarn build",
         "prepare": "yarn build",
         "storybook": "storybook dev -p 6006",
@@ -68,7 +67,7 @@
         "eslint-config-standard": "^17.1.0",
         "eslint-plugin-deprecation": "^2.0.0",
         "eslint-plugin-import": "^2.29.1",
-        "eslint-plugin-n": "^16.6.2",
+        "eslint-plugin-n": "^17.2.0",
         "eslint-plugin-node": "^11.1.0",
         "eslint-plugin-prettier": "^5.1.3",
         "eslint-plugin-promise": "^6.1.1",
@@ -82,9 +81,8 @@
         "skott": "^0.33.2",
         "storybook": "^8.0.8",
         "ts-jest": "^29.1.2",
-        "typescript": "^5.4.4",
+        "typescript": "^5.4.5",
         "vite": "^5.2.8"
     },
     "packageManager": "yarn@4.1.1"
 }
-
