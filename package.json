@@ -27,6 +27,7 @@
         "build:setup": "node dist/.setup.js",
         "build:pack": "cd dist && yarn && yarn pack && mv package.tgz ../package.tgz",
         "build": "npm-run-all -s build:pre build:tsc build:setup build:pack",
+        "build:ci": "npm-run-all -s build:pre build:tsc build:setup",
         "prepublishOnly": "yarn version apply && yarn run checks:pedantic && yarn build",
         "prepare": "yarn build",
         "storybook": "storybook dev -p 6006",
@@ -86,3 +87,4 @@
     },
     "packageManager": "yarn@4.1.1"
 }
+
