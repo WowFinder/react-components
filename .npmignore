@@ -1,0 +1,6 @@
+*.map
+*.spec.*
+*.test.ts
+__tests__
+.setup.*
+version.txt

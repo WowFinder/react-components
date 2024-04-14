@@ -1,13 +1,13 @@
 import { RawStats } from '@wowfinder/asset-schemas';
-import { ViewProps, RawStatsView } from '../../../';
+import { ViewProps, InlineStatsView } from '../../..';
 
 export default {
-    title: 'Creature/Stats/RawStatsView',
-    component: RawStatsView,
+    title: 'Creature/Stats/InlineStatsView',
+    component: InlineStatsView,
 };
 
-const Template = ({ data }: ViewProps<RawStats>) => (
-    <RawStatsView data={data} />
+const Template = ({ data }: ViewProps<RawStats>): React.ReactNode => (
+    <InlineStatsView data={data} />
 );
 
 export const Default = Template.bind(this, {

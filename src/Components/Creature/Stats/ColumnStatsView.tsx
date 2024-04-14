@@ -1,33 +1,8 @@
 import { RawStats } from '@wowfinder/asset-schemas';
-import { View } from 'helpers';
+import { View } from '../../../helpers/wrappers';
+import { ColumnDiv } from './ColumnDiv.helper';
 
-import styled from 'styled-components';
-
-const ColumnDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-    & > p {
-        display: inline-block;
-        flex: 1;
-        justify-content: space-between;
-        margin: 0;
-    }
-    & > p > b,
-    & > p > span {
-        display: inline-block;
-    }
-    & > p > b {
-        font-weight: bold;
-        max-width: 3.5em;
-        width: 3.5em;
-    }
-    & > p > span {
-        max-width: 2em;
-        width: 2em;
-    }
-`;
-
-const RawStatsView: View<RawStats> = ({ data }) => {
+const ColumnStatsView: View<RawStats> = ({ data }) => {
     // TODO: i18n
     return (
         <ColumnDiv>
@@ -59,4 +34,4 @@ const RawStatsView: View<RawStats> = ({ data }) => {
     );
 };
 
-export { RawStatsView };
+export { ColumnStatsView };
