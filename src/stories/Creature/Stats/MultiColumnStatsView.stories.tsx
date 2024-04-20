@@ -1,4 +1,4 @@
-import type { ViewProps, MultiStats } from '../../..';
+import type { MultiStats, ViewProps } from '../../..';
 import { MultiColumnStatsView } from '../../..';
 
 export default {
@@ -13,7 +13,7 @@ const Template = ({ data }: ViewProps<MultiStats>): React.ReactNode => (
 export const Default = Template.bind(this, {
     data: [
         {
-            key: 'base',
+            key: 'charsheet.common.base',
             strength: 10,
             dexterity: 10,
             constitution: 10,
@@ -22,7 +22,7 @@ export const Default = Template.bind(this, {
             charisma: 10,
         },
         {
-            key: 'gear',
+            key: 'charsheet.common.gear',
             isMod: true,
             strength: 2,
             dexterity: 3,
@@ -32,7 +32,7 @@ export const Default = Template.bind(this, {
             charisma: 5,
         },
         {
-            key: 'totals',
+            key: 'charsheet.common.total',
             strength: 12,
             dexterity: 13,
             constitution: 14,
@@ -41,7 +41,7 @@ export const Default = Template.bind(this, {
             charisma: 15,
         },
         {
-            key: 'mods',
+            key: 'charsheet.common.mod',
             isMod: true,
             strength: 1,
             dexterity: 1,

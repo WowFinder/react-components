@@ -1,6 +1,7 @@
 import { RawStats } from '@wowfinder/asset-schemas';
-import { View } from '../../../helpers/wrappers';
+import { useTranslation } from '@wowfinder/translations';
 import styled from 'styled-components';
+import { View } from '../../../helpers/wrappers';
 
 const InlineP = styled.p`
     display: inline-block;
@@ -15,20 +16,21 @@ const InlineP = styled.p`
 `;
 
 const InlineStatsView: View<RawStats> = ({ data }) => {
-    // TODO: i18n
+    const { t } = useTranslation();
+    const abbr = (stat: string): string => t(`stats.abbr.${stat}`);
     return (
         <InlineP>
-            <b>STR</b>
+            <b>{abbr('STR')}</b>
             <span>{data.strength}</span>
-            <b>DEX</b>
+            <b>{abbr('DEX')}</b>
             <span>{data.dexterity}</span>
-            <b>CON</b>
+            <b>{abbr('CON')}</b>
             <span>{data.constitution}</span>
-            <b>INT</b>
+            <b>{abbr('INT')}</b>
             <span>{data.intelligence}</span>
-            <b>WIS</b>
+            <b>{abbr('WIS')}</b>
             <span>{data.wisdom}</span>
-            <b>CHA</b>
+            <b>{abbr('CHA')}</b>
             <span>{data.charisma}</span>
         </InlineP>
     );

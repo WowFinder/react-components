@@ -1,5 +1,5 @@
 import { RawStats } from '@wowfinder/asset-schemas';
-import { ViewProps, ColumnStatsView } from '../../..';
+import { ColumnStatsView, ViewProps } from '../../..';
 
 export default {
     title: 'Creature/Stats/ColumnStatsView',
