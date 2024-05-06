@@ -2753,9 +2753,9 @@ __metadata:
   linkType: hard
 
 "@storybook/addon-onboarding@npm:^8.0.8":
-  version: 8.0.8
-  resolution: "@storybook/addon-onboarding@npm:8.0.8"
-  checksum: 10c0/42e7fb6f129ec2ff543fc13ccdf7ed2f762a950281f532c49de6b86c9d9b088740a1fb9aad8fa3fcd8372c83a1ca31f8e7f005a5d8a2e9d946d5d42c5664df9b
+  version: 8.0.10
+  resolution: "@storybook/addon-onboarding@npm:8.0.10"
+  checksum: 10c0/efbc399e3af570b9f63731fed1f02b561c0acf9a196fe2e3ead8cf6a8c6f8ae146c2a7ccded08da06db7f9faa9fcfb05de20279c74d8169ca01b60c689edf8ab
   languageName: node
   linkType: hard
 
