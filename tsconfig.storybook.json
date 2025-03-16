@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.json",
+    "include": ["src/stories/**/*", ".storybook/**/*"],
+    "exclude": [],
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "types": ["jest"],
+        "noEmit": true
+    }
+}

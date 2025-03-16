@@ -7,10 +7,7 @@ import path from 'path';
 
 /* istanbul ignore next test script - not testable via jest */
 function writeBufferSync(filePath: string[], raw: string): void {
-    fs.writeFileSync(
-        path.resolve(__dirname, ...filePath),
-        Buffer.from(raw, 'utf-8'),
-    );
+    fs.writeFileSync(path.resolve(__dirname, ...filePath), raw);
 }
 
 /* istanbul ignore next test script - not testable via jest */
@@ -36,13 +33,14 @@ function main(): void {
         sourceObj.main = sourceObj.main.slice(5);
     }
     writeBufferSync(['package.json'], JSON.stringify(sourceObj, null, 2));
-    writeBufferSync(['version.txt'], sourceObj.version);
+    writeBufferSync(['version.txt'], `${sourceObj?.version ?? ''}`);
     writeBufferSync(['yarn.lock'], '');
     copyFromParentSync('LICENSE');
     copyFromParentSync('README.md');
     copyFromParentSync('.npmignore');
 }
 
+/* istanbul ignore next test script - not testable under CI context */
 function cleanup(): void {
     fs.unlinkSync(path.resolve(__dirname, 'version.txt'));
     fs.unlinkSync(path.resolve(__dirname, 'yarn.lock'));
