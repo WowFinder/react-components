@@ -7,6 +7,10 @@ import {
 import { render, screen } from '@testing-library/react';
 import { MultiColumnStatsView } from '../MultiColumnStatsView';
 
+jest.mock('@wowfinder/translations', () => ({
+    useTranslation: () => ({ t: (key: string) => key }),
+}));
+
 const multiColumnMockData = [
     { key: 'base', ...defaultStatsMock },
     { key: 'racial', isMod: true, ...meleeBonusesStatsMock },

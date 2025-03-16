@@ -3,6 +3,10 @@ import { ColumnStatsView } from '../ColumnStatsView';
 import { render, screen } from '@testing-library/react';
 import { defaultStatsMock } from '@wowfinder/model';
 
+jest.mock('@wowfinder/translations', () => ({
+    useTranslation: () => ({ t: (key: string) => key }),
+}));
+
 describe('ColumnStatsView', () => {
     it('should render correctly', () => {
         render(<ColumnStatsView data={defaultStatsMock} />);

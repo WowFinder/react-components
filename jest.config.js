@@ -29,6 +29,7 @@ module.exports = {
         '__tests__',
         '__mocks__',
         'src/stories',
+        '.setup.ts',
     ],
 
     // Indicates which provider should be used to instrument code for coverage
@@ -45,12 +46,7 @@ module.exports = {
     // An object that configures minimum threshold enforcement for coverage results
     // coverageThreshold: undefined,
     coverageThreshold: {
-        global: {
-            branches: 100,
-            functions: 100,
-            lines: 100,
-            statements: 0,
-        },
+        global: { branches: 100, functions: 100, lines: 100, statements: 0 },
     },
 
     // A path to a custom dependency extractor
