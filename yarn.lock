@@ -2753,9 +2753,13 @@ __metadata:
   linkType: hard
 
 "@storybook/addon-onboarding@npm:^8.0.8":
-  version: 8.0.8
-  resolution: "@storybook/addon-onboarding@npm:8.0.8"
-  checksum: 10c0/42e7fb6f129ec2ff543fc13ccdf7ed2f762a950281f532c49de6b86c9d9b088740a1fb9aad8fa3fcd8372c83a1ca31f8e7f005a5d8a2e9d946d5d42c5664df9b
+  version: 8.2.2
+  resolution: "@storybook/addon-onboarding@npm:8.2.2"
+  dependencies:
+    react-confetti: "npm:^6.1.0"
+  peerDependencies:
+    storybook: ^8.2.2
+  checksum: 10c0/62d5f835a1f17ac10acf88031816bf0ada68bcd2ecbbbec732e383c0f5d72e6fc041622dda419581b159b6833be0fd64826cdb319feb321222c4f46e5b33173a
   languageName: node
   linkType: hard
 
@@ -11903,6 +11907,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-confetti@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "react-confetti@npm:6.1.0"
+  dependencies:
+    tween-functions: "npm:^1.2.0"
+  peerDependencies:
+    react: ^16.3.0 || ^17.0.1 || ^18.0.0
+  checksum: 10c0/5b4eb23eef564695f6db1d25b294ed31d5fa21ff4092c6a38e641f85cd10e3e0b50014366e3ac0f7cf772e73faaecd14614e5b11a5531336fa769dda8068ab59
+  languageName: node
+  linkType: hard
+
 "react-docgen-typescript@npm:^2.2.2":
   version: 2.2.2
   resolution: "react-docgen-typescript@npm:2.2.2"
@@ -13615,6 +13630,13 @@ __metadata:
   peerDependencies:
     typescript: ">=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta"
   checksum: 10c0/02f19e458ec78ead8fffbf711f834ad8ecd2cc6ade4ec0320790713dccc0a412b99e7fd907c4cda2a1dc602c75db6f12e0108e87a5afad4b2f9e90a24cabd5a2
+  languageName: node
+  linkType: hard
+
+"tween-functions@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "tween-functions@npm:1.2.0"
+  checksum: 10c0/7e59295b8b0ee4132ed2fe335f56a9db5c87056dad6b6fd3011be72239fd20398003ddb4403bc98ad9f5c94468890830f64016edbbde35581faf95b32cda8305
   languageName: node
   linkType: hard
 
