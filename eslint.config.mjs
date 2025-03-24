@@ -20,17 +20,6 @@ const compat = new FlatCompat({
     allConfig: js.configs.all,
 });
 
-const noUnderscores = {
-    leadingUnderscore: 'forbid',
-    trailingUnderscore: 'forbid',
-};
-
-const camel = ['strictCamelCase'];
-const pascal = ['StrictPascalCase'];
-const upper = ['UPPER_CASE'];
-const mixed = [...camel, ...pascal];
-const any = [...camel, ...pascal, ...upper];
-
 export default [
     {
         ignores: [
@@ -101,44 +90,11 @@ export default [
             ],
             '@typescript-eslint/no-explicit-any': 'off',
             '@typescript-eslint/prefer-enum-initializers': 'warn',
-            '@typescript-eslint/naming-convention': [
-                'error',
-                {
-                    selector: 'typeLike',
-                    format: pascal,
-                    ...noUnderscores,
-                },
-                {
-                    selector: 'memberLike',
-                    format: camel,
-                    ...noUnderscores,
-                },
-                {
-                    selector: 'function',
-                    format: mixed,
-                    ...noUnderscores,
-                },
-                {
-                    selector: 'variable',
-                    modifiers: ['const'],
-                    format: any,
-                    ...noUnderscores,
-                },
-                {
-                    selector: 'variableLike',
-                    format: camel,
-                    ...noUnderscores,
-                },
-            ],
 
             complexity: ['error', 15],
             '@typescript-eslint/no-non-null-assertion': 'off',
             // https://iliubinskii.github.io/eslint-plugin-misc/#rules
-            'misc/class-match-filename': 'warn',
             'misc/no-shadow': 'warn',
-            'misc/sort-construct-signature': 'error',
-            'misc/sort-class-members': 'warn',
-            'misc/typescript/no-unsafe-object-assignment': 'error',
         },
     },
     {
