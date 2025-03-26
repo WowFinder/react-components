@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { font, FontFamily } from '../../../styles/font';
 
 const ColumnDiv = styled.div`
     display: flex;
@@ -14,6 +15,7 @@ const ColumnDiv = styled.div`
         display: inline-block;
     }
     & > p > b {
+        ${font({ family: FontFamily.priori, size: 11 })}
         font-weight: bold;
         max-width: 3em;
         width: 3em;
