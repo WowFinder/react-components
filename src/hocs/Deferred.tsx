@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
-import { Spinner, type SpinnerProps } from '../Components/Spinner';
+import { Spinner, type SpinnerProps } from '../Components/helpers/Spinner';
 
 type LoadingProps = {
     size?: SpinnerProps['size'];

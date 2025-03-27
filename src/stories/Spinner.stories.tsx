@@ -1,7 +1,4 @@
-import {
-    Spinner,
-    type SpinnerProps,
-} from '../Components/Spinner';
+import { Spinner, type SpinnerProps } from '../Components/helpers/Spinner';
 
 export default {
     title: 'Spinner',
