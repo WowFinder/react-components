@@ -2,10 +2,9 @@ import { FC } from 'react';
 import type { MultiStats, ViewProps } from '../../..';
 import { MultiColumnStatsView } from '../../..';
 import { Deferred } from '../../../hocs/Deferred';
+import { DeferredViewProps } from '../../../helpers/wrappers';
 
-type DeferredStatsProps = {
-    promise: Promise<ViewProps<MultiStats>>;
-};
+type DeferredStatsProps = Omit<DeferredViewProps<MultiStats>, 'Loaded'>;
 
 const DeferredStats: FC<DeferredStatsProps> = ({ promise }) => (
     <Deferred promise={promise} Loaded={MultiColumnStatsView} />

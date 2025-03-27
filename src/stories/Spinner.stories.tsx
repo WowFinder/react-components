@@ -1,16 +1,7 @@
 import {
     Spinner,
-    // spinnerDefaultProps,
     type SpinnerProps,
 } from '../Components/Spinner';
-
-/*const mkControl = (type: 'text' | 'color' | 'number' = 'text') => {
-    return {
-        control: {
-            type,
-        },
-    };
-};*/
 
 export default {
     title: 'Spinner',
