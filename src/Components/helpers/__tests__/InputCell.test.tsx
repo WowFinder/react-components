@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 
 import { InputH, InputCell, CheckCell, InputSuffixedCell } from '../InputCell';
 
-function renderInTable(element: React.ReactElement) {
+function renderInTable(element: React.ReactElement): ReturnType<typeof render> {
     return render(
         <table>
             <tbody>
