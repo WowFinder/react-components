@@ -1,13 +1,13 @@
 type CommonValue = number | string;
 
 type CellArgsStrict<T> = {
-    id: string;
-    value: T;
-    hideZero?: boolean;
-    classes?: string[];
+    readonly id: string;
+    readonly value: T;
+    readonly hideZero?: boolean;
+    readonly classes?: string[];
 };
 
-type CellArgs<T> = Partial<CellArgsStrict<T>>;
+type CellArgs<T> = Readonly<Partial<CellArgsStrict<T>>>;
 
 function mkClassName(...classes: string[]): { className?: string } {
     return classes.length > 0 ? { className: classes.join(' ') } : {};
@@ -19,7 +19,8 @@ function InputH({
     hideZero = false,
     classes = [],
 }: CellArgs<CommonValue>): React.JSX.Element {
-    const val = value != null ? value || (hideZero ? '' : 0) : '';
+    const zeroDisplayValue = hideZero ? '' : 0;
+    const val = value != null ? value || zeroDisplayValue : '';
     const className = mkClassName(...classes);
     return (
         <th {...className}>
@@ -39,7 +40,8 @@ function InputCell({
     hideZero = false,
     classes = [],
 }: CellArgs<CommonValue>): React.JSX.Element {
-    const val = value != null ? value || (hideZero ? '' : 0) : '';
+    const zeroDisplayValue = hideZero ? '' : 0;
+    const val = value != null ? value || zeroDisplayValue : '';
     const className = mkClassName(...classes);
     return (
         <td {...className}>
@@ -72,15 +74,17 @@ function CheckCell({
     );
 }
 
+type InputSuffixedCellProps = Readonly<{
+    id: string;
+    value: number | string;
+    suffix: string;
+}>;
+
 function InputSuffixedCell({
     id,
     value,
     suffix,
-}: {
-    id: string;
-    value: number | string;
-    suffix: string;
-}): React.JSX.Element {
+}: InputSuffixedCellProps): React.JSX.Element {
     return (
         <td>
             <input
