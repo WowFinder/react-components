@@ -6,8 +6,9 @@ import {
 } from '@wowfinder/model';
 import { render, screen } from '@testing-library/react';
 import { MultiColumnStatsView } from '../MultiColumnStatsView';
+import { vi } from 'vitest';
 
-jest.mock('@wowfinder/translations', () => ({
+vi.mock('@wowfinder/translations', () => ({
     useTranslation: () => ({ t: (key: string) => key }),
 }));
 
