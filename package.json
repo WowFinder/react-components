@@ -7,7 +7,7 @@
     "types": "dist/index.d.ts",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/WowFinder/ts-enums.git"
+        "url": "git+https://github.com/WowFinder/react-components.git"
     },
     "author": "Edurne Pascual <herenvardo@gmail.com>",
     "license": " GPL-3.0-or-later",
