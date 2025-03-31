@@ -27,7 +27,7 @@ jobs:
             - name: Module compilation and build
               run: yarn build
             - name: Test and coverage
-              run: yarn jest --coverage
+              run: yarn vitest run --coverage
             - name: SonarCloud Scan
               uses: SonarSource/sonarqube-scan-action@master
               env:

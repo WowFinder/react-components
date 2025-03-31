@@ -2,8 +2,9 @@ import React from 'react';
 import { ColumnStatsView } from '../ColumnStatsView';
 import { render, screen } from '@testing-library/react';
 import { defaultStatsMock } from '@wowfinder/model';
+import { vi } from 'vitest';
 
-jest.mock('@wowfinder/translations', () => ({
+vi.mock('@wowfinder/translations', () => ({
     useTranslation: () => ({ t: (key: string) => key }),
 }));
 

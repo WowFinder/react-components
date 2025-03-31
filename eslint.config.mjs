@@ -1,7 +1,6 @@
 import prettier from 'eslint-plugin-prettier';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import misc from 'eslint-plugin-misc';
-import istanbul from 'eslint-plugin-istanbul';
 import stylisticJs from '@stylistic/eslint-plugin-js';
 import deprecationPlugin from 'eslint-plugin-deprecation';
 import globals from 'globals';
@@ -34,6 +33,7 @@ export default [
             '**/.webpack',
             '**/out',
             '**/.yarn',
+            'vitest.config.*',
         ],
     },
     ...compat.extends(),
@@ -44,7 +44,6 @@ export default [
             ['deprecation']: fixupPluginRules(deprecationPlugin),
             '@stylistic/js': stylisticJs,
             misc,
-            istanbul,
         },
 
         languageOptions: {
@@ -70,8 +69,8 @@ export default [
                 'error',
                 { max: 200, skipBlankLines: true, skipComments: true },
             ],
-            'istanbul/no-ignore-file': 'error',
-            'istanbul/prefer-ignore-reason': 'error',
+            //'istanbul/no-ignore-file': 'error',
+            //'istanbul/prefer-ignore-reason': 'error',
             'deprecation/deprecation': 'warn',
             quotes: ['error', 'single', { avoidEscape: true }],
             'react/prop-types': 'off',
