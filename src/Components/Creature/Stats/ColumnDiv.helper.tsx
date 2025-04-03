@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { font, FontFamily } from '../../../styles/font';
+import { font, FontFamily, autoReverseColors } from '../../../styles';
 
 const ColumnDiv = styled.div`
+    ${font({ family: FontFamily.priori, size: 11 })}
     display: flex;
     flex-direction: column;
     & > p {
@@ -15,8 +16,8 @@ const ColumnDiv = styled.div`
         display: inline-block;
     }
     & > p > b {
-        ${font({ family: FontFamily.priori, size: 11 })}
         font-weight: bold;
+        ${autoReverseColors}
         max-width: 3em;
         width: 3em;
     }
