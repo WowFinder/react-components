@@ -1,5 +1,6 @@
 import { RawStats } from '@wowfinder/asset-schemas';
 import { ViewProps, InlineStatsView } from '../../..';
+import { statMocks } from './helpers';
 
 export default {
     title: 'Creature/Stats/InlineStatsView',
@@ -11,23 +12,9 @@ const Template = ({ data }: ViewProps<RawStats>): React.ReactNode => (
 );
 
 export const Default = Template.bind(this, {
-    data: {
-        strength: 10,
-        dexterity: 10,
-        constitution: 10,
-        intelligence: 10,
-        wisdom: 10,
-        charisma: 10,
-    },
+    data: statMocks.defaults,
 });
 
 export const Baddass = Template.bind(this, {
-    data: {
-        strength: 20,
-        dexterity: 20,
-        constitution: 20,
-        intelligence: 20,
-        wisdom: 20,
-        charisma: 20,
-    },
+    data: statMocks.twenty,
 });

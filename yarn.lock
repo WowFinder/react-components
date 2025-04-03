@@ -3076,15 +3076,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wowfinder/model@npm:^0.0.10":
-  version: 0.0.10
-  resolution: "@wowfinder/model@npm:0.0.10"
+"@wowfinder/model@npm:^0.0.12":
+  version: 0.0.12
+  resolution: "@wowfinder/model@npm:0.0.12"
   dependencies:
     "@wowfinder/asset-schemas": "npm:^0.0.15"
     "@wowfinder/ts-enums": "npm:^0.0.16"
     "@wowfinder/ts-utils": "npm:^0.1.8"
     globals: "npm:^16.0.0"
-  checksum: 10c0/678ed4e640af1dc2dd2f7f33befae12a7790ed380c95016fc46758b32b799bdc40b88b4d2ecdc9cb5b2f71bd32c9efca842d0f8e4a562b178ad451de8d2127b9
+  checksum: 10c0/f714df012bc1f00516d272ee86d6e64da24c0c1def2827046f1bd58b70c0b16c55bd1d5123ee63cc7807b58a7a277c5b083680803eb99a85c27b6ed47f69b451
   languageName: node
   linkType: hard
 
@@ -3116,7 +3116,7 @@ __metadata:
     "@typescript-eslint/utils": "npm:^8.29.0"
     "@vitest/coverage-v8": "npm:^3.1.1"
     "@wowfinder/asset-schemas": "npm:^0.0.15"
-    "@wowfinder/model": "npm:^0.0.10"
+    "@wowfinder/model": "npm:^0.0.12"
     "@wowfinder/translations": "npm:^0.0.5"
     "@wowfinder/ts-enums": "npm:^0.0.16"
     "@wowfinder/ts-utils": "npm:^0.1.8"
@@ -3148,11 +3148,11 @@ __metadata:
     skott: "npm:^0.35.4"
     storybook: "npm:^8.6.12"
     storybook-react-i18next: "npm:^3.2.1"
-    styled-components: "npm:^6.1.16"
+    styled-components: "npm:^6.1.17"
     ts-jest: "npm:^29.3.1"
     tsd: "npm:^0.31.2"
     typescript: "npm:^5.8.2"
-    vite: "npm:^6.2.4"
+    vite: "npm:^6.2.5"
     vitest: "npm:^3.1.1"
   languageName: unknown
   linkType: soft
@@ -10583,9 +10583,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^6.1.16":
-  version: 6.1.16
-  resolution: "styled-components@npm:6.1.16"
+"styled-components@npm:^6.1.17":
+  version: 6.1.17
+  resolution: "styled-components@npm:6.1.17"
   dependencies:
     "@emotion/is-prop-valid": "npm:1.2.2"
     "@emotion/unitless": "npm:0.8.1"
@@ -10599,7 +10599,7 @@ __metadata:
   peerDependencies:
     react: ">= 16.8.0"
     react-dom: ">= 16.8.0"
-  checksum: 10c0/190d6d5dc9099489fac37e23be5bda7fef399ca9f9230f1de81100b98ec1c75070ef5990241c007126d97f40069d3c864f4239e185161a70ff111dd3e3bf5370
+  checksum: 10c0/87f35173c5fc2291ddba7ed8224d19fe6872d056a577f55fe130248f5ea23e5c48c012e881fa1ad93df60b56a12c1c2d553f628e204f090189221734927e50b0
   languageName: node
   linkType: hard
 
@@ -11329,7 +11329,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.0.0 || ^6.0.0, vite@npm:^6.2.4":
+"vite@npm:^5.0.0 || ^6.0.0":
   version: 6.2.4
   resolution: "vite@npm:6.2.4"
   dependencies:
@@ -11378,6 +11378,58 @@ __metadata:
   bin:
     vite: bin/vite.js
   checksum: 10c0/5a011ee5cce91de023a22564a314f04bf64d0d02b420d92c3d539d10257448d60e98e52b491404656426fba4a50dc25f107282540d7388fc5303dc441280155e
+  languageName: node
+  linkType: hard
+
+"vite@npm:^6.2.5":
+  version: 6.2.5
+  resolution: "vite@npm:6.2.5"
+  dependencies:
+    esbuild: "npm:^0.25.0"
+    fsevents: "npm:~2.3.3"
+    postcss: "npm:^8.5.3"
+    rollup: "npm:^4.30.1"
+  peerDependencies:
+    "@types/node": ^18.0.0 || ^20.0.0 || >=22.0.0
+    jiti: ">=1.21.0"
+    less: "*"
+    lightningcss: ^1.21.0
+    sass: "*"
+    sass-embedded: "*"
+    stylus: "*"
+    sugarss: "*"
+    terser: ^5.16.0
+    tsx: ^4.8.1
+    yaml: ^2.4.2
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  peerDependenciesMeta:
+    "@types/node":
+      optional: true
+    jiti:
+      optional: true
+    less:
+      optional: true
+    lightningcss:
+      optional: true
+    sass:
+      optional: true
+    sass-embedded:
+      optional: true
+    stylus:
+      optional: true
+    sugarss:
+      optional: true
+    terser:
+      optional: true
+    tsx:
+      optional: true
+    yaml:
+      optional: true
+  bin:
+    vite: bin/vite.js
+  checksum: 10c0/226bb3c1875e1982559007007580e8d083b81f5289f18e28841d622ba030599e1bd9926adccc8264879e319e9f9e4f48a38a0dc52a5dfcdf2a9cb7313bfc1816
   languageName: node
   linkType: hard
 

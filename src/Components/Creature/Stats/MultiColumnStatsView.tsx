@@ -2,6 +2,7 @@ import { RawStats } from '@wowfinder/asset-schemas';
 import { useTranslation } from '@wowfinder/translations';
 import { View } from '../../../helpers/wrappers';
 import { ColumnDiv } from './ColumnDiv.helper';
+import { plusPrefixed } from '../../../helpers';
 
 type MultiStats = ({
     key: string;
@@ -25,11 +26,6 @@ const statHeadingKeys: Record<(typeof stats)[number], string> = {
     wisdom: 'stats.abbr.WIS',
     charisma: 'stats.abbr.CHA',
 };
-
-function plusPrefixed(stat: number, isMod: boolean): string {
-    const prefix = isMod && stat >= 0 ? '+' : '';
-    return `${prefix}${stat}`;
-}
 
 const StatValue = ({
     stat,
