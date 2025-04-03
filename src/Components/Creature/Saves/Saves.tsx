@@ -47,7 +47,8 @@ type ModCellProps = Readonly<
 >;
 
 function ModCell({ id, value, hideZero }: ModCellProps): React.JSX.Element {
-    const formattedValue = value || !hideZero ? plusPrefixed(value) : '';
+    const shouldShow = !!value || !hideZero;
+    const formattedValue = shouldShow ? plusPrefixed(value) : '';
     return <InputCell id={id} value={formattedValue} hideZero={hideZero} />;
 }
 
