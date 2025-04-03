@@ -40,7 +40,7 @@
     },
     "dependencies": {
         "@wowfinder/asset-schemas": "^0.0.15",
-        "@wowfinder/model": "^0.0.10",
+        "@wowfinder/model": "^0.0.12",
         "@wowfinder/translations": "^0.0.5",
         "@wowfinder/ts-enums": "^0.0.16",
         "@wowfinder/ts-utils": "^0.1.8",
@@ -104,5 +104,5 @@
         "vite": "^6.2.4",
         "vitest": "^3.1.1"
     },
-    "packageManager": "yarn@4.7.0"
+    "packageManager": "yarn@4.8.1"
 }
