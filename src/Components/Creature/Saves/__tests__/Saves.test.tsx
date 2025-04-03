@@ -27,7 +27,6 @@ function expectCellValue(
 describe('Saves', () => {
     it('should render the correct values', () => {
         const result = render(<Saves saves={exampleSavesMock} />);
-        console.warn(result.container.innerHTML);
         expect(screen.getByText('charsheet.saves.abbr.fort')).toBeTruthy();
         expectCellValue(result, 'base', 'fort', '+5');
         expectCellValue(result, 'enhance', 'fort', '+1');
