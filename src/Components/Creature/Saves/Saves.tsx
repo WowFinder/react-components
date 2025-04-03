@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import { CellArgs, InputCell } from '../../helpers/InputCell';
+import { ModCell } from '../../helpers/InputCell';
 import {
     borderless,
     smallText,
@@ -8,11 +8,13 @@ import {
     borderThin,
     borderThick,
     printableBottomBorder,
+    font,
+    FontFamily,
 } from '../../../styles';
 import { type SaveBreakdown, type SaveBreakdowns } from '@wowfinder/model';
-import { plusPrefixed } from '../../../helpers';
 
 const StyledTable = styled.table`
+    ${font({ family: FontFamily.priori })}
     border-spacing: 0;
     & th,
     & td {
@@ -41,16 +43,6 @@ const StyledTable = styled.table`
         ${reverseColors}
     }
 `;
-
-type ModCellProps = Readonly<
-    Pick<CellArgs<number>, 'id' | 'value' | 'hideZero'>
->;
-
-function ModCell({ id, value, hideZero }: ModCellProps): React.JSX.Element {
-    const shouldShow = !!value || !hideZero;
-    const formattedValue = shouldShow ? plusPrefixed(value) : '';
-    return <InputCell id={id} value={formattedValue} hideZero={hideZero} />;
-}
 
 type RowProps = {
     readonly idSuffix: string;

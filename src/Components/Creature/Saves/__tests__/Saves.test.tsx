@@ -1,12 +1,10 @@
 import React from 'react';
 import { Saves } from '../Saves';
 import { render, screen } from '@testing-library/react';
-import { vi } from 'vitest';
 import { exampleSavesMock } from '@wowfinder/model';
+import { mockTranslations } from '../../../../__tests__/helpers';
 
-vi.mock('@wowfinder/translations', () => ({
-    useTranslation: () => ({ t: (key: string) => key }),
-}));
+mockTranslations();
 
 function capFirst(val: string): string {
     return String(val).charAt(0).toUpperCase() + String(val).slice(1);
