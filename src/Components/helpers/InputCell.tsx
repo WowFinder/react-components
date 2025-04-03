@@ -1,3 +1,5 @@
+import { plusPrefixed } from '../../helpers';
+
 type CommonValue = number | string;
 
 type CellArgsStrict<T> = {
@@ -55,6 +57,16 @@ function InputCell({
     );
 }
 
+type ModCellProps = Readonly<
+    Pick<CellArgs<number>, 'id' | 'value' | 'hideZero'>
+>;
+
+function ModCell({ id, value, hideZero }: ModCellProps): React.JSX.Element {
+    const shouldShow = !!value || !hideZero;
+    const formattedValue = shouldShow ? plusPrefixed(value) : '';
+    return <InputCell id={id} value={formattedValue} hideZero={hideZero} />;
+}
+
 function CheckCell({
     id,
     value,
@@ -103,8 +115,10 @@ function InputSuffixedCell({
 export {
     InputH,
     InputCell,
+    ModCell,
     CheckCell,
     InputSuffixedCell,
     type CellArgs,
     type CellArgsStrict,
+    type ModCellProps,
 };

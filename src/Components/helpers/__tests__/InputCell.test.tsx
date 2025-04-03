@@ -1,7 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import { InputH, InputCell, CheckCell, InputSuffixedCell } from '../InputCell';
+import { InputH, InputCell, CheckCell, InputSuffixedCell, ModCell } from '../InputCell';
+import { mockTranslations } from '../../../__tests__/helpers';
+
+mockTranslations();
 
 function renderInTable(element: React.ReactElement): ReturnType<typeof render> {
     return render(
@@ -62,6 +65,25 @@ describe('InputCell', () => {
         const input = screen.getByTestId('InputCell') as HTMLInputElement;
         expect(input instanceof HTMLInputElement).toBe(true);
         expect(input.value).toBe('');
+    });
+});
+
+describe('ModCell', () => {
+    it('renders with basic props', () => {
+        renderInTable(<ModCell id="test" value={0} hideZero={false} />);
+        const input = screen.getByTestId('InputCell') as HTMLInputElement;
+        expect(input instanceof HTMLInputElement).toBe(true);
+        expect(input.value).toBe('+0');
+        expect(input.parentElement?.className).toBe('');
+    });
+    it('renders with unusual props', () => {
+        renderInTable(
+            <ModCell id="" value={0} hideZero={true} />,
+        );
+        const input = screen.getByTestId('InputCell') as HTMLInputElement;
+        expect(input instanceof HTMLInputElement).toBe(true);
+        expect(input.value).toBe('');
+        expect(input.id).toBe('');
     });
 });
 

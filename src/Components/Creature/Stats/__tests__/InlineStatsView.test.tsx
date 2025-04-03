@@ -2,11 +2,9 @@ import React from 'react';
 import { InlineStatsView } from '../InlineStatsView';
 import { render, screen } from '@testing-library/react';
 import { defaultStatsMock } from '@wowfinder/model';
-import { vi } from 'vitest';
+import { mockTranslations } from '../../../../__tests__/helpers';
 
-vi.mock('@wowfinder/translations', () => ({
-    useTranslation: () => ({ t: (key: string) => key }),
-}));
+mockTranslations();
 
 describe('InlineStatsView', () => {
     it('should render correctly', () => {

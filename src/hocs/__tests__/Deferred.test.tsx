@@ -1,6 +1,9 @@
 import React, { FC } from 'react';
 import { Deferred } from '../Deferred';
 import { act, render, screen } from '@testing-library/react';
+import { mockTranslations } from '../../__tests__/helpers';
+
+mockTranslations();
 
 type SimpleTextProps = {
     text: string;
@@ -9,10 +12,10 @@ const SimpleText: FC<SimpleTextProps> = ({ text }) => (
     <p data-testid="simpleText">{text}</p>
 );
 
-const unendingPromise: Promise<string> = new Promise(() => {});
+const unendingPromise: Promise<string> = new Promise(() => { });
 
 const instantTextPromise: (text: string) => Promise<string> = text =>
-    new Promise(resolve => resolve(text));
+    Promise.resolve(text);
 
 const wrapPromise = (
     basePromise: Promise<string>,

@@ -1,12 +1,10 @@
 import React from 'react';
 import { Saves } from '../Saves';
 import { render, screen } from '@testing-library/react';
-import { vi } from 'vitest';
 import { exampleSavesMock } from '@wowfinder/model';
+import { mockTranslations } from '../../../../__tests__/helpers';
 
-vi.mock('@wowfinder/translations', () => ({
-    useTranslation: () => ({ t: (key: string) => key }),
-}));
+mockTranslations();
 
 function capFirst(val: string): string {
     return String(val).charAt(0).toUpperCase() + String(val).slice(1);
@@ -29,7 +27,6 @@ function expectCellValue(
 describe('Saves', () => {
     it('should render the correct values', () => {
         const result = render(<Saves saves={exampleSavesMock} />);
-        console.warn(result.container.innerHTML);
         expect(screen.getByText('charsheet.saves.abbr.fort')).toBeTruthy();
         expectCellValue(result, 'base', 'fort', '+5');
         expectCellValue(result, 'enhance', 'fort', '+1');
