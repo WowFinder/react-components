@@ -12,7 +12,7 @@ const SimpleText: FC<SimpleTextProps> = ({ text }) => (
     <p data-testid="simpleText">{text}</p>
 );
 
-const unendingPromise: Promise<string> = new Promise(() => { });
+const unendingPromise: Promise<string> = new Promise(() => {});
 
 const instantTextPromise: (text: string) => Promise<string> = text =>
     Promise.resolve(text);

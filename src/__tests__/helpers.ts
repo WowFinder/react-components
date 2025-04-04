@@ -6,4 +6,11 @@ function mockTranslations(): void {
     }));
 }
 
-export { mockTranslations };
+function expectExportFC(
+    component: (...args: any[]) => void,
+): void {
+    expect(component).toBeDefined();
+    expect(component).toBeInstanceOf(Function);
+}
+
+export { mockTranslations, expectExportFC };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Saves } from '../Saves';
+import { SavesBlock } from '../SavesBlock';
 import { render, screen } from '@testing-library/react';
 import { exampleSavesMock } from '@wowfinder/model';
 import { mockTranslations } from '../../../../__tests__/helpers';
@@ -26,7 +26,7 @@ function expectCellValue(
 
 describe('Saves', () => {
     it('should render the correct values', () => {
-        const result = render(<Saves saves={exampleSavesMock} />);
+        const result = render(<SavesBlock saves={exampleSavesMock} />);
         expect(screen.getByText('charsheet.saves.abbr.fort')).toBeTruthy();
         expectCellValue(result, 'base', 'fort', '+5');
         expectCellValue(result, 'enhance', 'fort', '+1');

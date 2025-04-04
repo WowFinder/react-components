@@ -81,11 +81,11 @@ function Row({ idSuffix, label, value }: RowProps): React.JSX.Element {
     );
 }
 
-type SavesProps = {
+type SavesBlockProps = {
     readonly saves: SaveBreakdowns;
 };
 
-export function Saves({ saves }: SavesProps): React.JSX.Element {
+function SavesBlock({ saves }: SavesBlockProps): React.JSX.Element {
     const { t } = useTranslation();
     return (
         <StyledTable>
@@ -121,3 +121,5 @@ export function Saves({ saves }: SavesProps): React.JSX.Element {
         </StyledTable>
     );
 }
+
+export { SavesBlock, type SavesBlockProps };

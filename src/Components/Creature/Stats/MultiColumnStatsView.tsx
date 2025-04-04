@@ -65,6 +65,4 @@ const MultiColumnStatsView: View<MultiStats> = ({ data }) => {
     );
 };
 
-export type { MultiStats };
-
-export { MultiColumnStatsView };
+export { MultiColumnStatsView, type MultiStats };
