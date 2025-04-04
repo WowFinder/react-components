@@ -23,12 +23,12 @@ const multiColumnMockData = [
 describe('MultiColumnStatsView', async () => {
     it('should render correctly', async () => {
         render(<MultiColumnStatsView data={multiColumnMockData} />);
-        expect(await screen.findByText('STR')).toBeTruthy();
-        expect(await screen.findByText('DEX')).toBeTruthy();
-        expect(await screen.findByText('CON')).toBeTruthy();
-        expect(await screen.findByText('INT')).toBeTruthy();
-        expect(await screen.findByText('WIS')).toBeTruthy();
-        expect(await screen.findByText('CHA')).toBeTruthy();
+        expect(await screen.findByText('stats.abbr.STR')).toBeTruthy();
+        expect(await screen.findByText('stats.abbr.DEX')).toBeTruthy();
+        expect(await screen.findByText('stats.abbr.CON')).toBeTruthy();
+        expect(await screen.findByText('stats.abbr.INT')).toBeTruthy();
+        expect(await screen.findByText('stats.abbr.WIS')).toBeTruthy();
+        expect(await screen.findByText('stats.abbr.CHA')).toBeTruthy();
         for (const key of multiColumnMockData.map(d => d.key)) {
             expect(await screen.findByText(key)).toBeTruthy();
         }
