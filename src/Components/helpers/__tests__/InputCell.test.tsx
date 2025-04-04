@@ -1,10 +1,19 @@
 import React from 'react';
+import { vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import {
+    CheckCell,
+    InputCell,
+    InputH,
+    InputSuffixedCell,
+    ModCell,
+} from '../InputCell';
 
-import { InputH, InputCell, CheckCell, InputSuffixedCell, ModCell } from '../InputCell';
-import { mockTranslations } from '../../../__tests__/helpers';
-
-mockTranslations();
+vi.mock('@wowfinder/translations', () => ({
+    useTranslation: () => ({
+        t: (key: string) => key,
+    }),
+}));
 
 function renderInTable(element: React.ReactElement): ReturnType<typeof render> {
     return render(
@@ -77,9 +86,7 @@ describe('ModCell', () => {
         expect(input.parentElement?.className).toBe('');
     });
     it('renders with unusual props', () => {
-        renderInTable(
-            <ModCell id="" value={0} hideZero={true} />,
-        );
+        renderInTable(<ModCell id="" value={0} hideZero={true} />);
         const input = screen.getByTestId('InputCell') as HTMLInputElement;
         expect(input instanceof HTMLInputElement).toBe(true);
         expect(input.value).toBe('');

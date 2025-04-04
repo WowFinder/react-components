@@ -1,19 +1,23 @@
 import React from 'react';
-import { InlineStatsView } from '../InlineStatsView';
+import { vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { defaultStatsMock } from '@wowfinder/model';
-import { mockTranslations } from '../../../../__tests__/helpers';
+import { InlineStatsView } from '../InlineStatsView';
 
-mockTranslations();
+vi.mock('@wowfinder/translations', () => ({
+    useTranslation: () => ({
+        t: (key: string) => key,
+    }),
+}));
 
-describe('InlineStatsView', () => {
-    it('should render correctly', () => {
+describe('InlineStatsView', async () => {
+    it('should render correctly', async () => {
         render(<InlineStatsView data={defaultStatsMock} />);
-        expect(screen.findByText('STR')).toBeTruthy();
-        expect(screen.findByText('DEX')).toBeTruthy();
-        expect(screen.findByText('CON')).toBeTruthy();
-        expect(screen.findByText('INT')).toBeTruthy();
-        expect(screen.findByText('WIS')).toBeTruthy();
-        expect(screen.findByText('CHA')).toBeTruthy();
+        expect(await screen.findByText('stats.abbr.STR')).toBeTruthy();
+        expect(await screen.findByText('stats.abbr.DEX')).toBeTruthy();
+        expect(await screen.findByText('stats.abbr.CON')).toBeTruthy();
+        expect(await screen.findByText('stats.abbr.INT')).toBeTruthy();
+        expect(await screen.findByText('stats.abbr.WIS')).toBeTruthy();
+        expect(await screen.findByText('stats.abbr.CHA')).toBeTruthy();
     });
 });

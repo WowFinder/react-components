@@ -1,8 +1,8 @@
 import { RawStats } from '@wowfinder/asset-schemas';
 import { useTranslation } from '@wowfinder/translations';
+import { plusPrefixed } from '../../../helpers';
 import { View } from '../../../helpers/wrappers';
 import { ColumnDiv } from './ColumnDiv.helper';
-import { plusPrefixed } from '../../../helpers';
 
 type MultiStats = ({
     key: string;
@@ -65,6 +65,4 @@ const MultiColumnStatsView: View<MultiStats> = ({ data }) => {
     );
 };
 
-export type { MultiStats };
-
-export { MultiColumnStatsView };
+export { MultiColumnStatsView, type MultiStats };

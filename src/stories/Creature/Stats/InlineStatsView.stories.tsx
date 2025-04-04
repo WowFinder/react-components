@@ -1,5 +1,5 @@
 import { RawStats } from '@wowfinder/asset-schemas';
-import { ViewProps, InlineStatsView } from '../../..';
+import { InlineStatsView, ViewProps } from '../../..';
 import { statMocks } from './helpers';
 
 export default {

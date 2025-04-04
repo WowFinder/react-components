@@ -1,17 +1,17 @@
-import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import { ModCell } from '../../helpers/InputCell';
-import {
-    borderless,
-    smallText,
-    reverseColors,
-    borderThin,
-    borderThick,
-    printableBottomBorder,
-    font,
-    FontFamily,
-} from '../../../styles';
 import { type SaveBreakdown, type SaveBreakdowns } from '@wowfinder/model';
+import { useTranslation } from '@wowfinder/translations';
+import {
+    FontFamily,
+    borderThick,
+    borderThin,
+    borderless,
+    font,
+    printableBottomBorder,
+    reverseColors,
+    smallText,
+} from '../../../styles';
+import { ModCell } from '../../helpers/InputCell';
 
 const StyledTable = styled.table`
     ${font({ family: FontFamily.priori })}
@@ -81,11 +81,11 @@ function Row({ idSuffix, label, value }: RowProps): React.JSX.Element {
     );
 }
 
-type SavesProps = {
+type SavesBlockProps = {
     readonly saves: SaveBreakdowns;
 };
 
-export function Saves({ saves }: SavesProps): React.JSX.Element {
+function SavesBlock({ saves }: SavesBlockProps): React.JSX.Element {
     const { t } = useTranslation();
     return (
         <StyledTable>
@@ -121,3 +121,5 @@ export function Saves({ saves }: SavesProps): React.JSX.Element {
         </StyledTable>
     );
 }
+
+export { SavesBlock, type SavesBlockProps };

@@ -1,9 +1,9 @@
 import {
+    autoReverseColors,
     colors,
-    reverseColors,
     linkColors,
     mainColor,
-    autoReverseColors,
+    reverseColors,
 } from '../colors';
 
 describe('colors', () => {

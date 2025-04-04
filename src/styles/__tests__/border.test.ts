@@ -1,7 +1,7 @@
 import {
     border,
-    borderThin,
     borderThick,
+    borderThin,
     borderless,
     bottomLine,
     printableBottomBorder,

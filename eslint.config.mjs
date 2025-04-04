@@ -78,7 +78,7 @@ export default [
                 'error',
                 { allowExpressions: true },
             ],
-            'no-return-assign': 'off',
+            'no-return-assign': ['error'],
             '@stylistic/js/semi': ['error'],
             'no-unused-vars': 'off',
             '@typescript-eslint/no-unused-vars': ['error'],
@@ -111,3 +111,4 @@ export default [
         },
     },
 ];
+

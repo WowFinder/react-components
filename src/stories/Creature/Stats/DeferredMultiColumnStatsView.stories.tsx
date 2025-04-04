@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import type { MultiStats, ViewProps } from '../../..';
 import { MultiColumnStatsView } from '../../..';
-import { Deferred } from '../../../hocs/Deferred';
 import { DeferredViewProps } from '../../../helpers/wrappers';
+import { Deferred } from '../../../hocs/Deferred';
 import { statMocks } from './helpers';
 
 type DeferredStatsProps = Omit<DeferredViewProps<MultiStats>, 'Loaded'>;

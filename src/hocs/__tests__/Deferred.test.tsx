@@ -1,9 +1,13 @@
 import React, { FC } from 'react';
-import { Deferred } from '../Deferred';
+import { vi } from 'vitest';
 import { act, render, screen } from '@testing-library/react';
-import { mockTranslations } from '../../__tests__/helpers';
+import { Deferred } from '../Deferred';
 
-mockTranslations();
+vi.mock('@wowfinder/translations', () => ({
+    useTranslation: () => ({
+        t: (key: string) => key,
+    }),
+}));
 
 type SimpleTextProps = {
     text: string;
@@ -12,7 +16,7 @@ const SimpleText: FC<SimpleTextProps> = ({ text }) => (
     <p data-testid="simpleText">{text}</p>
 );
 
-const unendingPromise: Promise<string> = new Promise(() => { });
+const unendingPromise: Promise<string> = new Promise(() => {});
 
 const instantTextPromise: (text: string) => Promise<string> = text =>
     Promise.resolve(text);

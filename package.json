@@ -16,6 +16,7 @@
         "lint:fix": "eslint . --ext js,ts,jsx,tsx --fix",
         "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json,json5}\"",
         "format:check": "prettier --check \"src/**/*.{js,ts,jsx,tsx,json,json5}\"",
+        "precommit": "npm-run-all -s lint:fix format",
         "test": "vitest run",
         "test:coverage": "vitest run --coverage",
         "test:storybook": "test-storybook",
@@ -40,7 +41,7 @@
     },
     "dependencies": {
         "@wowfinder/asset-schemas": "^0.0.15",
-        "@wowfinder/model": "^0.0.12",
+        "@wowfinder/model": "^0.0.14",
         "@wowfinder/translations": "^0.0.5",
         "@wowfinder/ts-enums": "^0.0.16",
         "@wowfinder/ts-utils": "^0.1.8",
@@ -50,7 +51,6 @@
         "i18next-http-backend": "^3.0.2",
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
-        "react-i18next": "^15.4.1",
         "styled-components": "^6.1.17"
     },
     "devDependencies": {
@@ -68,6 +68,7 @@
         "@stylistic/eslint-plugin-js": "^4.2.0",
         "@testing-library/dom": "^10.4.0",
         "@testing-library/react": "^16.3.0",
+        "@trivago/prettier-plugin-sort-imports": "^5.2.2",
         "@tsconfig/recommended": "^1.0.8",
         "@types/jest": "^29.5.14",
         "@types/react": "^19.1.0",
@@ -106,3 +107,4 @@
     },
     "packageManager": "yarn@4.8.1"
 }
+

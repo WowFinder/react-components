@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { font, FontFamily, autoReverseColors } from '../../../styles';
+import { FontFamily, autoReverseColors, font } from '../../../styles';
 
 const ColumnDiv = styled.div`
     ${font({ family: FontFamily.priori, size: 11 })}
