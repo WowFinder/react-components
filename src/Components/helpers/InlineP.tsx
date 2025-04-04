@@ -5,11 +5,11 @@ const InlineP = styled.p`
     display: inline-block;
     margin: 0 1em;
     ${font({ family: FontFamily.priori, size: 11 })}
-    & > b {
+    & b {
         font-weight: bold;
         margin-left: 0.5em;
     }
-    & > span::before {
+    b ~ span::before {
         content: ': ';
     }
 `;

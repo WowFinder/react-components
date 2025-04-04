@@ -1,6 +1,6 @@
+import { RawStats } from '@wowfinder/asset-schemas';
 import { ColumnStatsView, ViewProps } from '../../..';
 import { statMocks } from './helpers';
-import { RawStats } from '@wowfinder/asset-schemas';
 
 export default {
     title: 'Creature/Stats/ColumnStatsView',

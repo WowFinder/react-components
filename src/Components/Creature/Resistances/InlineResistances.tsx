@@ -1,8 +1,8 @@
-import { type View } from '../../../helpers';
-import { InlineP } from '../../helpers/InlineP';
 import { RawResistances } from '@wowfinder/asset-schemas';
 import { useTranslation } from '@wowfinder/translations';
 import { DamageType } from '@wowfinder/ts-enums';
+import { type View } from '../../../helpers';
+import { InlineP } from '../../helpers/InlineP';
 
 const InlineResistances: View<RawResistances> = ({ data }) => {
     const { t } = useTranslation();

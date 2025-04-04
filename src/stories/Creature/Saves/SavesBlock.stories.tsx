@@ -1,5 +1,5 @@
-import { SavesBlock } from '../../../Components/Creature/Saves/SavesBlock';
 import { exampleSavesMock } from '@wowfinder/model';
+import { SavesBlock } from '../../../Components/Creature/Saves/SavesBlock';
 
 export default {
     title: 'Creature/Saves/Saves',

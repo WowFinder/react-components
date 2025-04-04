@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { type SaveBreakdown, type SaveBreakdowns } from '@wowfinder/model';
+import { useTranslation } from '@wowfinder/translations';
 import {
     FontFamily,
     borderThick,
@@ -10,8 +12,6 @@ import {
     smallText,
 } from '../../../styles';
 import { ModCell } from '../../helpers/InputCell';
-import { type SaveBreakdown, type SaveBreakdowns } from '@wowfinder/model';
-import { useTranslation } from '@wowfinder/translations';
 
 const StyledTable = styled.table`
     ${font({ family: FontFamily.priori })}

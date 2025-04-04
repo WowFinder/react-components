@@ -1,5 +1,6 @@
-import { vi } from 'vitest';
 import React from 'react';
+import { vi } from 'vitest';
+import { render, screen } from '@testing-library/react';
 import {
     CheckCell,
     InputCell,
@@ -7,7 +8,6 @@ import {
     InputSuffixedCell,
     ModCell,
 } from '../InputCell';
-import { render, screen } from '@testing-library/react';
 
 vi.mock('@wowfinder/translations', () => ({
     useTranslation: () => ({

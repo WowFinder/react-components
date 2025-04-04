@@ -40,7 +40,7 @@
     },
     "dependencies": {
         "@wowfinder/asset-schemas": "^0.0.15",
-        "@wowfinder/model": "^0.0.13",
+        "@wowfinder/model": "^0.0.14",
         "@wowfinder/translations": "^0.0.5",
         "@wowfinder/ts-enums": "^0.0.16",
         "@wowfinder/ts-utils": "^0.1.8",

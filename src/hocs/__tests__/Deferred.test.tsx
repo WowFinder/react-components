@@ -1,7 +1,7 @@
-import { vi } from 'vitest';
 import React, { FC } from 'react';
-import { Deferred } from '../Deferred';
+import { vi } from 'vitest';
 import { act, render, screen } from '@testing-library/react';
+import { Deferred } from '../Deferred';
 
 vi.mock('@wowfinder/translations', () => ({
     useTranslation: () => ({

@@ -1,7 +1,7 @@
-import { View } from '../../../helpers/wrappers';
-import { InlineP } from '../../helpers/InlineP';
 import { RawStats } from '@wowfinder/asset-schemas';
 import { useTranslation } from '@wowfinder/translations';
+import { View } from '../../../helpers/wrappers';
+import { InlineP } from '../../helpers/InlineP';
 
 const InlineStatsView: View<RawStats> = ({ data }) => {
     const { t } = useTranslation();

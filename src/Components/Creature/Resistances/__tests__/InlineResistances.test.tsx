@@ -1,9 +1,9 @@
-import { vi } from 'vitest';
 import React from 'react';
-import { InlineResistances } from '../InlineResistances';
+import { vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { type RawResistances } from '@wowfinder/asset-schemas';
 import { mockZeroResistances } from '@wowfinder/model';
+import { InlineResistances } from '../InlineResistances';
 
 vi.mock('@wowfinder/translations', () => ({
     useTranslation: () => ({

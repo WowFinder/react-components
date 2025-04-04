@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 import {
+    FullResistances,
+    ResistanceBreakdown,
+    breakdownByType,
+} from '@wowfinder/model';
+import { useTranslation } from '@wowfinder/translations';
+import { capitalizeFirstLetter } from '@wowfinder/ts-utils';
+import {
     borderThick,
     borderThin,
     borderless,
@@ -8,13 +15,6 @@ import {
     smallText,
 } from '../../../styles';
 import { ModCell } from '../../helpers/InputCell';
-import {
-    FullResistances,
-    ResistanceBreakdown,
-    breakdownByType,
-} from '@wowfinder/model';
-import { useTranslation } from '@wowfinder/translations';
-import { capitalizeFirstLetter } from '@wowfinder/ts-utils';
 
 const StyledTable = styled.table`
     & th,
@@ -50,7 +50,7 @@ function Row({ id, value }: RowArgs): React.JSX.Element {
     const idSuffix = capitalizeFirstLetter(id);
     return (
         <tr id={`trResist${idSuffix}`}>
-            <th title={t(`damageTypes.full.${id}`)}>
+            <th title={capitalizeFirstLetter(t(`damageTypes.full.${id}`))}>
                 {t(`damageTypes.abbr.${id}`)}
             </th>
             <ModCell id={`txtResistTotal${idSuffix}`} value={value?.total} />

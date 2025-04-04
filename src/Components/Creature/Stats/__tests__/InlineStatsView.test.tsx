@@ -1,8 +1,8 @@
-import { vi } from 'vitest';
 import React from 'react';
-import { InlineStatsView } from '../InlineStatsView';
+import { vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { defaultStatsMock } from '@wowfinder/model';
+import { InlineStatsView } from '../InlineStatsView';
 
 vi.mock('@wowfinder/translations', () => ({
     useTranslation: () => ({

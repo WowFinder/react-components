@@ -1,4 +1,3 @@
-import { MultiStats } from '../../../Components/Creature/Stats/MultiColumnStatsView';
 import { RawStats } from '@wowfinder/asset-schemas';
 import {
     addStatSets,
@@ -7,6 +6,7 @@ import {
     twentyStatsMock as twenty,
     // fullBonusStatsMock,
 } from '@wowfinder/model';
+import { MultiStats } from '../../../Components/Creature/Stats/MultiColumnStatsView';
 
 type StatsColumn = {
     isMod?: boolean;

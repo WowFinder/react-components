@@ -1,19 +1,18 @@
-import { type View, plusPrefixed } from '../../../helpers';
-import { InlineP } from '../../helpers/InlineP';
 import { RawSaves } from '@wowfinder/asset-schemas';
 import { useTranslation } from '@wowfinder/translations';
-import { Save } from '@wowfinder/ts-enums';
+import { type View, plusPrefixed } from '../../../helpers';
+import { InlineP } from '../../helpers/InlineP';
 
 const InlineSaves: View<RawSaves> = ({ data }) => {
     const { t } = useTranslation();
-    const abbr = (save: Save): string => t(`saves.abbr.${save}`);
+    const abbr = (save: 'fort' | 'refl' | 'will'): string => t(`charsheet.saves.abbr.${save}`);
     return (
         <InlineP>
-            <b>{abbr(Save.fortitude)}</b>
+            <b>{abbr('fort')}</b>
             <span>{plusPrefixed(data.fortitude)}</span>
-            <b>{abbr(Save.reflexes)}</b>
+            <b>{abbr('refl')}</b>
             <span>{plusPrefixed(data.reflexes)}</span>
-            <b>{abbr(Save.will)}</b>
+            <b>{abbr('will')}</b>
             <span>{plusPrefixed(data.will)}</span>
         </InlineP>
     );

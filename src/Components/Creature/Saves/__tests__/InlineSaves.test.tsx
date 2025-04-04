@@ -1,7 +1,7 @@
-import { vi } from 'vitest';
 import React from 'react';
-import { InlineSaves } from '../InlineSaves';
+import { vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import { InlineSaves } from '../InlineSaves';
 
 vi.mock('@wowfinder/translations', () => ({
     useTranslation: () => ({

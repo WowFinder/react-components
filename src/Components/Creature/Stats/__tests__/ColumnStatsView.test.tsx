@@ -1,8 +1,8 @@
-import { vi } from 'vitest';
 import React from 'react';
-import { ColumnStatsView } from '../ColumnStatsView';
+import { vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { defaultStatsMock } from '@wowfinder/model';
+import { ColumnStatsView } from '../ColumnStatsView';
 
 vi.mock('@wowfinder/translations', () => ({
     useTranslation: () => ({
