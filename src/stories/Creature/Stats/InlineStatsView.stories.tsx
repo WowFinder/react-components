@@ -1,6 +1,6 @@
-import { RawStats } from '@wowfinder/asset-schemas';
-import { ViewProps, InlineStatsView } from '../../..';
+import { InlineStatsView, ViewProps } from '../../..';
 import { statMocks } from './helpers';
+import { RawStats } from '@wowfinder/asset-schemas';
 
 export default {
     title: 'Creature/Stats/InlineStatsView',

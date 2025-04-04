@@ -1,9 +1,9 @@
-import React from 'react';
 import { vi } from 'vitest';
+import React from 'react';
+import { expectCellValue } from '../../../../__tests__/helpers';
+import { SavesBlock } from '../SavesBlock';
 import { render, screen } from '@testing-library/react';
 import { exampleSavesMock } from '@wowfinder/model';
-import { SavesBlock } from '../SavesBlock';
-import { expectCellValue } from '../../../../__tests__/helpers';
 
 vi.mock('@wowfinder/translations', () => ({
     useTranslation: () => ({

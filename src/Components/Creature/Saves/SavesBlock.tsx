@@ -1,17 +1,17 @@
-import { useTranslation } from '@wowfinder/translations';
 import styled from 'styled-components';
-import { ModCell } from '../../helpers/InputCell';
 import {
-    borderless,
-    smallText,
-    reverseColors,
-    borderThin,
-    borderThick,
-    printableBottomBorder,
-    font,
     FontFamily,
+    borderThick,
+    borderThin,
+    borderless,
+    font,
+    printableBottomBorder,
+    reverseColors,
+    smallText,
 } from '../../../styles';
+import { ModCell } from '../../helpers/InputCell';
 import { type SaveBreakdown, type SaveBreakdowns } from '@wowfinder/model';
+import { useTranslation } from '@wowfinder/translations';
 
 const StyledTable = styled.table`
     ${font({ family: FontFamily.priori })}

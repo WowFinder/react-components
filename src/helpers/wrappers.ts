@@ -5,7 +5,7 @@ interface ViewProps<T> {
     data: T;
 }
 
-type View<T> = ({ data }: ViewProps<T>) => ReactNode;
+type View<T> = (props: ViewProps<T>) => ReactNode;
 
 type DeferredViewProps<T> = DeferredProps<ViewProps<T>>;
 

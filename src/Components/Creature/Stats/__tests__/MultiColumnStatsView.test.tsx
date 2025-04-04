@@ -1,12 +1,12 @@
+import { vi } from 'vitest';
 import React from 'react';
+import { MultiColumnStatsView } from '../MultiColumnStatsView';
+import { render, screen } from '@testing-library/react';
 import {
     defaultStatsMock,
     meleeBonusesStatsMock,
     mixedBonusStatsMock,
 } from '@wowfinder/model';
-import { render, screen } from '@testing-library/react';
-import { MultiColumnStatsView } from '../MultiColumnStatsView';
-import { vi } from 'vitest';
 
 vi.mock('@wowfinder/translations', () => ({
     useTranslation: () => ({

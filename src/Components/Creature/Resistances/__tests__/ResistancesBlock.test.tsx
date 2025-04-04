@@ -1,15 +1,14 @@
+import { vi } from 'vitest';
 import React from 'react';
+import { expectCellValue } from '../../../../__tests__/helpers';
+import { plusPrefixed } from '../../../../helpers';
+import { ResistancesBlock } from '../ResistancesBlock';
 import { render } from '@testing-library/react';
 import {
     FullResistances,
     mockDifferentFullResistances,
 } from '@wowfinder/model';
-import { ResistancesBlock } from '../ResistancesBlock';
-
-import { vi } from 'vitest';
-import { expectCellValue } from '../../../../__tests__/helpers';
 import { BonusType, DamageType } from '@wowfinder/ts-enums';
-import { plusPrefixed } from '../../../../helpers';
 
 vi.mock('@wowfinder/translations', () => ({
     useTranslation: () => ({

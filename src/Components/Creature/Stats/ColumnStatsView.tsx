@@ -1,7 +1,7 @@
-import { RawStats } from '@wowfinder/asset-schemas';
-import { useTranslation } from '@wowfinder/translations';
 import { View } from '../../../helpers/wrappers';
 import { ColumnDiv } from './ColumnDiv.helper';
+import { RawStats } from '@wowfinder/asset-schemas';
+import { useTranslation } from '@wowfinder/translations';
 
 const ColumnStatsView: View<RawStats> = ({ data }) => {
     const { t } = useTranslation();

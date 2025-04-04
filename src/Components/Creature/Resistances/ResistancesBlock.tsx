@@ -1,20 +1,20 @@
-import { useTranslation } from '@wowfinder/translations';
 import styled from 'styled-components';
-import { capitalizeFirstLetter } from '@wowfinder/ts-utils';
 import {
-    breakdownByType,
-    FullResistances,
-    ResistanceBreakdown,
-} from '@wowfinder/model';
-import { ModCell } from '../../helpers/InputCell';
-import {
-    borderless,
     borderThick,
     borderThin,
+    borderless,
     printableBottomBorder,
     reverseColors,
     smallText,
 } from '../../../styles';
+import { ModCell } from '../../helpers/InputCell';
+import {
+    FullResistances,
+    ResistanceBreakdown,
+    breakdownByType,
+} from '@wowfinder/model';
+import { useTranslation } from '@wowfinder/translations';
+import { capitalizeFirstLetter } from '@wowfinder/ts-utils';
 
 const StyledTable = styled.table`
     & th,

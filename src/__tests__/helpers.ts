@@ -1,8 +1,15 @@
 import { type render } from '@testing-library/react';
 
-function expectExportFC(component: (...args: any[]) => void): void {
+function expectExportFC(component: Function): void {
     expect(component).toBeDefined();
     expect(component).toBeInstanceOf(Function);
+}
+
+function expectExactExportFCs(module: {}, ...components: Function[]): void {
+    components.forEach(component => {
+        expectExportFC(module[component.name]);
+    });
+    expect(Object.keys(module).length).toBe(components.length);
 }
 
 function capFirst(val: string): string {
@@ -24,4 +31,4 @@ function expectCellValue(
     expect(cell?.getAttribute('value')).toBe(value);
 }
 
-export { expectExportFC, capFirst, expectCellValue };
+export { expectExportFC, expectExactExportFCs, capFirst, expectCellValue };

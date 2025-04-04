@@ -1,7 +1,7 @@
+import { vi } from 'vitest';
 import React from 'react';
 import { Spinner } from '../Spinner';
 import { render, screen } from '@testing-library/react';
-import { vi } from 'vitest';
 
 vi.mock('@wowfinder/translations', () => ({
     useTranslation: () => ({

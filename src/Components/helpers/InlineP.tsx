@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { font, FontFamily } from '../../styles';
+import { FontFamily, font } from '../../styles';
 
 const InlineP = styled.p`
     display: inline-block;
