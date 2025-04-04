@@ -1,19 +1,24 @@
-import { mockTranslations } from '../../../../__tests__/helpers';
+import { expectExportFC } from '../../../../__tests__/helpers';
 import * as Stats from '../index';
+import { vi } from 'vitest';
 
-mockTranslations();
+vi.mock('@wowfinder/translations', () => ({
+    useTranslation: () => ({
+        t: (key: string) => key,
+    }),
+}));
 
 describe('Creature Stats components index', () => {
     it('should export ColumnStatsView component', () => {
-        expect(Stats.ColumnStatsView).toBeDefined();
-        expect(Stats.ColumnStatsView).toBeInstanceOf(Function);
+        expectExportFC(Stats.ColumnStatsView);
     });
     it('should export InlineStatsView component', () => {
-        expect(Stats.InlineStatsView).toBeDefined();
-        expect(Stats.InlineStatsView).toBeInstanceOf(Function);
+        expectExportFC(Stats.InlineStatsView);
     });
     it('should export MultiColumnStatsView component', () => {
-        expect(Stats.MultiColumnStatsView).toBeDefined();
-        expect(Stats.MultiColumnStatsView).toBeInstanceOf(Function);
+        expectExportFC(Stats.MultiColumnStatsView);
+    });
+    it('should export exactly 3 components', () => {
+        expect(Object.keys(Stats).length).toBe(3);
     });
 });

@@ -6,9 +6,13 @@ import {
 } from '@wowfinder/model';
 import { render, screen } from '@testing-library/react';
 import { MultiColumnStatsView } from '../MultiColumnStatsView';
-import { mockTranslations } from '../../../../__tests__/helpers';
+import { vi } from 'vitest';
 
-mockTranslations();
+vi.mock('@wowfinder/translations', () => ({
+    useTranslation: () => ({
+        t: (key: string) => key,
+    }),
+}));
 
 const multiColumnMockData = [
     { key: 'base', ...defaultStatsMock },
@@ -16,8 +20,8 @@ const multiColumnMockData = [
     { key: 'class', isMod: true, ...mixedBonusStatsMock },
 ];
 
-describe('MultiColumnStatsView', () => {
-    it('should render correctly', () => {
+describe('MultiColumnStatsView', async () => {
+    it('should render correctly', async () => {
         render(<MultiColumnStatsView data={multiColumnMockData} />);
         expect(screen.findByText('STR')).toBeTruthy();
         expect(screen.findByText('DEX')).toBeTruthy();

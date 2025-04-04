@@ -2,9 +2,13 @@ import React from 'react';
 import { ColumnStatsView } from '../ColumnStatsView';
 import { render, screen } from '@testing-library/react';
 import { defaultStatsMock } from '@wowfinder/model';
-import { mockTranslations } from '../../../../__tests__/helpers';
+import { vi } from 'vitest';
 
-mockTranslations();
+vi.mock('@wowfinder/translations', () => ({
+    useTranslation: () => ({
+        t: (key: string) => key,
+    }),
+}));
 
 describe('ColumnStatsView', () => {
     it('should render correctly', () => {

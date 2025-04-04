@@ -3142,7 +3142,6 @@ __metadata:
     prettier: "npm:^3.5.3"
     react: "npm:^19.1.0"
     react-dom: "npm:^19.1.0"
-    react-i18next: "npm:^15.4.1"
     rimraf: "npm:^6.0.1"
     rxjs: "npm:^7.8.2"
     skott: "npm:^0.35.4"

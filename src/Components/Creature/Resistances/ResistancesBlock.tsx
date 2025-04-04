@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '@wowfinder/translations';
 import styled from 'styled-components';
 import { capitalizeFirstLetter } from '@wowfinder/ts-utils';
 import {
@@ -50,7 +50,7 @@ function Row({ id, value }: RowArgs): React.JSX.Element {
     const idSuffix = capitalizeFirstLetter(id);
     return (
         <tr id={`trResist${idSuffix}`}>
-            <th title={t(`damageTypes.full.${id}`) || undefined}>
+            <th title={t(`damageTypes.full.${id}`)}>
                 {t(`damageTypes.abbr.${id}`)}
             </th>
             <ModCell id={`txtResistTotal${idSuffix}`} value={value?.total} />
@@ -75,7 +75,7 @@ function Row({ id, value }: RowArgs): React.JSX.Element {
                 hideZero={true}
             />
             <ModCell
-                id={`txtResistTemporary${idSuffix}`}
+                id={`txtResistTemporal${idSuffix}`}
                 value={value?.temporal}
                 hideZero={true}
             />

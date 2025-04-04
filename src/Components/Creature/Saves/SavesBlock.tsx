@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '@wowfinder/translations';
 import styled from 'styled-components';
 import { ModCell } from '../../helpers/InputCell';
 import {

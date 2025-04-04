@@ -1,9 +1,13 @@
 import React from 'react';
 import { Spinner } from '../Spinner';
 import { render, screen } from '@testing-library/react';
-import { mockTranslations } from '../../../__tests__/helpers';
+import { vi } from 'vitest';
 
-mockTranslations();
+vi.mock('@wowfinder/translations', () => ({
+    useTranslation: () => ({
+        t: (key: string) => key,
+    }),
+}));
 
 describe('Spinner', () => {
     it('should render a default spinner', async () => {

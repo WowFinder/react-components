@@ -1,9 +1,13 @@
 import React, { FC } from 'react';
 import { Deferred } from '../Deferred';
 import { act, render, screen } from '@testing-library/react';
-import { mockTranslations } from '../../__tests__/helpers';
+import { vi } from 'vitest';
 
-mockTranslations();
+vi.mock('@wowfinder/translations', () => ({
+    useTranslation: () => ({
+        t: (key: string) => key,
+    }),
+}));
 
 type SimpleTextProps = {
     text: string;

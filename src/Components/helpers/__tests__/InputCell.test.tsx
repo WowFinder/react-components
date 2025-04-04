@@ -8,9 +8,13 @@ import {
     InputSuffixedCell,
     ModCell,
 } from '../InputCell';
-import { mockTranslations } from '../../../__tests__/helpers';
+import { vi } from 'vitest';
 
-mockTranslations();
+vi.mock('@wowfinder/translations', () => ({
+    useTranslation: () => ({
+        t: (key: string) => key,
+    }),
+}));
 
 function renderInTable(element: React.ReactElement): ReturnType<typeof render> {
     return render(

@@ -1,21 +1,7 @@
 import { RawStats } from '@wowfinder/asset-schemas';
 import { useTranslation } from '@wowfinder/translations';
-import styled from 'styled-components';
 import { View } from '../../../helpers/wrappers';
-import { font, FontFamily } from '../../../styles/font';
-
-const InlineP = styled.p`
-    display: inline-block;
-    margin: 0 1em;
-    ${font({ family: FontFamily.priori, size: 11 })}
-    & > b {
-        font-weight: bold;
-        margin-left: 0.5em;
-    }
-    & > span::before {
-        content: ': ';
-    }
-`;
+import { InlineP } from '../../helpers/InlineP';
 
 const InlineStatsView: View<RawStats> = ({ data }) => {
     const { t } = useTranslation();

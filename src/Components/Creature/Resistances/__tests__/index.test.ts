@@ -1,11 +1,16 @@
 import * as Resistances from '../index';
-import { mockTranslations } from '../../../../__tests__/helpers';
+import { expectExportFC } from '../../../../__tests__/helpers';
 
-mockTranslations();
+import { vi } from 'vitest';
+
+vi.mock('@wowfinder/translations', () => ({
+    useTranslation: () => ({
+        t: (key: string) => key,
+    }),
+}));
 
 describe('Creature Resistances components index', () => {
     it('should export ResistancesBlock component', () => {
-        expect(Resistances.ResistancesBlock).toBeDefined();
-        expect(Resistances.ResistancesBlock).toBeInstanceOf(Function);
+        expectExportFC(Resistances.ResistancesBlock);
     });
 });
