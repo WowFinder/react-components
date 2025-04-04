@@ -1,14 +1,10 @@
+import { RawSaves } from '@wowfinder/asset-schemas';
 import { useTranslation } from '@wowfinder/translations';
 import { InlineP } from '../../helpers/InlineP';
 import { Save } from '@wowfinder/ts-enums';
 import { plusPrefixed, View } from '../../../helpers';
 
-// TODO: Migrate definition to @wowfinder/model
-type Saves = {
-    [key in Save]: number;
-};
-
-const InlineSaves: View<Saves> = ({ data }) => {
+const InlineSaves: View<RawSaves> = ({ data }) => {
     const { t } = useTranslation();
     const abbr = (save: Save): string => t(`saves.abbr.${save}`);
     return (
