@@ -5,7 +5,8 @@ import { InlineP } from '../../helpers/InlineP';
 
 const InlineSaves: View<RawSaves> = ({ data }) => {
     const { t } = useTranslation();
-    const abbr = (save: 'fort' | 'refl' | 'will'): string => t(`charsheet.saves.abbr.${save}`);
+    const abbr = (save: 'fort' | 'refl' | 'will'): string =>
+        t(`charsheet.saves.abbr.${save}`);
     return (
         <InlineP>
             <b>{abbr('fort')}</b>

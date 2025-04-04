@@ -16,6 +16,7 @@
         "lint:fix": "eslint . --ext js,ts,jsx,tsx --fix",
         "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json,json5}\"",
         "format:check": "prettier --check \"src/**/*.{js,ts,jsx,tsx,json,json5}\"",
+        "precommit": "npm-run-all -s lint:fix format",
         "test": "vitest run",
         "test:coverage": "vitest run --coverage",
         "test:storybook": "test-storybook",
@@ -106,3 +107,4 @@
     },
     "packageManager": "yarn@4.8.1"
 }
+
