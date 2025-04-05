@@ -6,6 +6,7 @@ import {
 } from '@wowfinder/model';
 import { useTranslation } from '@wowfinder/translations';
 import { capitalizeFirstLetter } from '@wowfinder/ts-utils';
+import { ChildlessFC } from '../../../helpers';
 import {
     borderThick,
     borderThin,
@@ -45,7 +46,7 @@ type RowArgs = {
     readonly id: string;
     readonly value: ResistanceBreakdown;
 };
-function Row({ id, value }: RowArgs): React.JSX.Element {
+const Row: ChildlessFC<RowArgs> = ({ id, value }) => {
     const { t } = useTranslation();
     const idSuffix = capitalizeFirstLetter(id);
     return (
@@ -86,15 +87,15 @@ function Row({ id, value }: RowArgs): React.JSX.Element {
             />
         </tr>
     );
-}
+};
 
 type ResistancesBlockProps = {
     readonly resistances: FullResistances;
 };
 
-export function ResistancesBlock({
+const ResistancesBlock: ChildlessFC<ResistancesBlockProps> = ({
     resistances,
-}: ResistancesBlockProps): React.JSX.Element {
+}) => {
     const { t } = useTranslation();
     const byType = breakdownByType(resistances);
     return (
@@ -123,4 +124,6 @@ export function ResistancesBlock({
             </tbody>
         </StyledTable>
     );
-}
+};
+
+export { ResistancesBlock, type ResistancesBlockProps };

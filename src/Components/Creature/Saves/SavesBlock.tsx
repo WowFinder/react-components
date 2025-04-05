@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { type SaveBreakdown, type SaveBreakdowns } from '@wowfinder/model';
 import { useTranslation } from '@wowfinder/translations';
+import { ChildlessFC } from '../../../helpers';
 import {
     FontFamily,
     borderThick,
@@ -50,7 +51,7 @@ type RowProps = {
     readonly value?: SaveBreakdown;
 };
 
-function Row({ idSuffix, label, value }: RowProps): React.JSX.Element {
+const Row: ChildlessFC<RowProps> = ({ idSuffix, label, value }) => {
     return (
         <tr id={`tr${idSuffix}`}>
             <th>{label}</th>
@@ -79,13 +80,13 @@ function Row({ idSuffix, label, value }: RowProps): React.JSX.Element {
             />
         </tr>
     );
-}
+};
 
 type SavesBlockProps = {
     readonly saves: SaveBreakdowns;
 };
 
-function SavesBlock({ saves }: SavesBlockProps): React.JSX.Element {
+const SavesBlock: ChildlessFC<SavesBlockProps> = ({ saves }) => {
     const { t } = useTranslation();
     return (
         <StyledTable>
@@ -120,6 +121,6 @@ function SavesBlock({ saves }: SavesBlockProps): React.JSX.Element {
             </tbody>
         </StyledTable>
     );
-}
+};
 
 export { SavesBlock, type SavesBlockProps };
