@@ -1,5 +1,5 @@
 import { mockedClasses } from '@wowfinder/model';
-import { ClassPicker } from "../../../Components/Creature/Class/ClassPicker";
+import { ClassPicker } from '../../../Components/Creature/Class/ClassPicker';
 
 export default {
     title: 'Creature/Class/ClassPicker',

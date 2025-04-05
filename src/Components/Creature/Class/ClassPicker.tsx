@@ -1,40 +1,37 @@
 import React from 'react';
 import { Class } from '@wowfinder/model';
 import { useTranslation } from '@wowfinder/translations';
+import { ChildlessFC } from '../../../helpers';
 
 type ClassPickerEntryProps = {
     readonly cls: Class;
     readonly selected: boolean;
 };
 
-function ClassPickerEntry({ cls, selected }: ClassPickerEntryProps) {
+const ClassPickerEntry: ChildlessFC<ClassPickerEntryProps> = ({
+    cls,
+    selected,
+}) => {
     const { t } = useTranslation();
     const selectedProp = selected ? { selected: true } : {};
     const k = cls.key;
     return (
-        <option
-            key={k}
-            value={k}
-            {...selectedProp}>
+        <option key={k} value={k} {...selectedProp}>
             {t(`classes.${k}`)}
         </option>
     );
-}
+};
 
-type ClassPickerEntryPropsEmpty = {
+type EmptyClassPickerEntryProps = {
     readonly selected: boolean;
 };
 
-function EmptyClassPickerEntry({
+const EmptyClassPickerEntry: ChildlessFC<EmptyClassPickerEntryProps> = ({
     selected,
-}: ClassPickerEntryPropsEmpty) {
+}) => {
     const selectedProp = selected ? { selected: true } : {};
-    return (
-        <option
-            value=""
-            {...selectedProp}></option>
-    );
-}
+    return <option value="" {...selectedProp}></option>;
+};
 
 type ClassPickerPropsBase = {
     readonly classes: Class[];
@@ -47,24 +44,24 @@ type ClassPickerPropsNonEmpty = ClassPickerPropsBase & {
 type ClassPickerPropsEmpty = ClassPickerPropsBase & {
     readonly allowEmpty: true;
 };
-type ClassPickerProps = Readonly<ClassPickerPropsNonEmpty | ClassPickerPropsEmpty>;
+type ClassPickerProps = Readonly<
+    ClassPickerPropsNonEmpty | ClassPickerPropsEmpty
+>;
 
-function ClassPicker({
+const ClassPicker: ChildlessFC<ClassPickerProps> = ({
     classes,
     initialSelection,
     allowEmpty = false,
-}: ClassPickerProps) {
+}) => {
     const [selectedKey, setSelectedKey] = React.useState<string | undefined>(
         initialSelection,
     );
     return (
         <select
-            defaultValue={selectedKey ?? ''}
+            value={selectedKey ?? ''}
             onChange={e => setSelectedKey(e.target.value)}>
             {allowEmpty && (
-                <EmptyClassPickerEntry
-                    selected={selectedKey === ''}
-                />
+                <EmptyClassPickerEntry selected={selectedKey === ''} />
             )}
             {classes.map(cls => (
                 <ClassPickerEntry
@@ -75,7 +72,7 @@ function ClassPicker({
             ))}
         </select>
     );
-}
+};
 
 export { ClassPicker };
 export type { ClassPickerProps };
