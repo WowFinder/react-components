@@ -35,7 +35,7 @@ describe('InlineClasses', () => {
         expect(entries.length).toBe(baseTestEntries.length);
     });
 
-    it('should render class names and levels correctly and in the correct order', () => {
+    it('should render class names and levels correctly and ordered by level descending', () => {
         const { container } = render(<InlineClasses data={baseTestEntries} />);
         const entries = container.querySelectorAll('span.inline-class-entry');
 
