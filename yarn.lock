@@ -3148,6 +3148,7 @@ __metadata:
     "@wowfinder/ts-enums": "npm:^0.0.17"
     "@wowfinder/ts-utils": "npm:^0.1.8"
     c8: "npm:^10.1.3"
+    chromatic: "npm:^11.28.0"
     eslint: "npm:^9.24.0"
     eslint-config-prettier: "npm:^10.1.1"
     eslint-plugin-deprecation: "npm:^3.0.0"
@@ -4040,6 +4041,25 @@ __metadata:
   version: 3.0.0
   resolution: "chownr@npm:3.0.0"
   checksum: 10c0/43925b87700f7e3893296c8e9c56cc58f926411cce3a6e5898136daaf08f08b9a8eb76d37d3267e707d0dcc17aed2e2ebdf5848c0c3ce95cf910a919935c1b10
+  languageName: node
+  linkType: hard
+
+"chromatic@npm:^11.28.0":
+  version: 11.28.0
+  resolution: "chromatic@npm:11.28.0"
+  peerDependencies:
+    "@chromatic-com/cypress": ^0.*.* || ^1.0.0
+    "@chromatic-com/playwright": ^0.*.* || ^1.0.0
+  peerDependenciesMeta:
+    "@chromatic-com/cypress":
+      optional: true
+    "@chromatic-com/playwright":
+      optional: true
+  bin:
+    chroma: dist/bin.js
+    chromatic: dist/bin.js
+    chromatic-cli: dist/bin.js
+  checksum: 10c0/ae0bb035e531852f9a6dbd5be133a2a4759ef39ece13fcbcdf635db4de0129f7bca8f58f7a0411a7eafb4dc09319df6aaece5646d9944ee4347ee0e38de52d65
   languageName: node
   linkType: hard
 
