@@ -5,10 +5,17 @@ import { type ChildlessFC } from '../helpers';
 type WrapperProps = Pick<SpinnerProps, 'color' | 'strokeStyle' | 'opacity'> & {
     size: number;
     thickness: number;
-    rotationPeriod: number
-}
+    rotationPeriod: number;
+};
 
-const Wrapper: ChildlessFC<WrapperProps> = ({ size, thickness, color, strokeStyle, rotationPeriod, opacity }) => (
+const Wrapper: ChildlessFC<WrapperProps> = ({
+    size,
+    thickness,
+    color,
+    strokeStyle,
+    rotationPeriod,
+    opacity,
+}) => (
     <Spinner
         size={`${size}em`}
         thickness={`${thickness}em`}
@@ -69,7 +76,7 @@ const meta: Meta<ChildlessFC<WrapperProps>> = {
                 step: 0.1,
             },
             description: 'Opacity of the spinner',
-        }
+        },
     },
     args: {
         size: 2,
@@ -78,7 +85,7 @@ const meta: Meta<ChildlessFC<WrapperProps>> = {
         strokeStyle: 'solid',
         rotationPeriod: 0.6,
         opacity: 0.5,
-    }
+    },
 };
 
 export const Default: Story = {};
@@ -91,7 +98,7 @@ export const Custom: Story = {
         strokeStyle: 'dotted',
         rotationPeriod: 0.2,
         thickness: 0.8,
-    }
+    },
 };
 
 export default meta;
