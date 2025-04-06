@@ -1,7 +1,7 @@
 {
     "name": "@wowfinder/react-components",
     "type": "commonjs",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "description": "React component library for the WowFinder apps",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -32,7 +32,7 @@
         "build:tsc": "tsc",
         "build:clean-tests": "find ./dist -name '__tests__' | xargs rm -rf",
         "build:setup": "node dist/.setup.js",
-        "build:pack": "cd dist && yarn pack && mv package.tgz ../package.tgz",
+        "build:pack": "cd dist && yarn pack && mv package.tgz ../package.tgz && cd ..",
         "build": "npm-run-all -s build:pre build:tsc build:clean-tests build:setup build:pack",
         "prepublishOnly": "yarn version apply && yarn run checks:pedantic && yarn build",
         "prepare": "yarn build",
