@@ -1,7 +1,7 @@
 import React from 'react';
-import { Class } from '@wowfinder/model';
+import { type Class } from '@wowfinder/model';
 import { useTranslation } from '@wowfinder/translations';
-import { ChildlessFC } from '../../../helpers';
+import { type ChildlessFC } from '../../../helpers';
 
 type ClassPickerEntryProps = {
     readonly cls: Class;

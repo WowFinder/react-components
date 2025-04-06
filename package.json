@@ -14,9 +14,9 @@
     "scripts": {
         "lint": "eslint . --ext js,ts,jsx,tsx",
         "lint:fix": "eslint . --ext js,ts,jsx,tsx --fix",
-        "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json,json5}\"",
+        "format": "prettier --write --log-level=warn \"src/**/*.{js,ts,jsx,tsx,json,json5}\"",
         "format:check": "prettier --check \"src/**/*.{js,ts,jsx,tsx,json,json5}\"",
-        "precommit": "npm-run-all -s lint:fix format",
+        "precommit": "npm-run-all -s lint:fix format checks:pedantic",
         "test": "vitest run",
         "test:coverage": "vitest run --coverage",
         "test:storybook": "test-storybook",
@@ -41,9 +41,9 @@
     },
     "dependencies": {
         "@wowfinder/asset-schemas": "^0.0.15",
-        "@wowfinder/model": "^0.0.15",
+        "@wowfinder/model": "^0.0.16",
         "@wowfinder/translations": "^0.0.5",
-        "@wowfinder/ts-enums": "^0.0.16",
+        "@wowfinder/ts-enums": "^0.0.17",
         "@wowfinder/ts-utils": "^0.1.8",
         "globals": "^16.0.0",
         "i18next": "^24.2.3",
