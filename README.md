@@ -4,6 +4,8 @@ React-based components for the WowFinder apps (desktop, native, and web)
 
 ## Repository / development status
 
+Latest Storybook build: <https://main--67f2c68c90a719350937bcb0.chromatic.com>
+
 ### Sonar public analysis
 
 Overview: <https://sonarcloud.io/project/overview?id=WowFinder_react-components>
