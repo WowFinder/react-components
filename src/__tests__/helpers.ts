@@ -31,4 +31,23 @@ function expectCellValue(
     expect(cell?.getAttribute('value')).toBe(value);
 }
 
-export { expectExportFC, expectExactExportFCs, capFirst, expectCellValue };
+function expectInputValue(
+    result: ReturnType<typeof render>,
+    id: string,
+    value: string,
+): void {
+    const input = result.container.querySelector(`#${id}`) as HTMLInputElement;
+    if (!input) {
+        console.error(`Input not found for selector: #${id}`);
+    }
+    expect(input instanceof HTMLInputElement).toBeTruthy();
+    expect(input?.value).toBe(value);
+}
+
+export {
+    expectExportFC,
+    expectExactExportFCs,
+    capFirst,
+    expectCellValue,
+    expectInputValue,
+};
