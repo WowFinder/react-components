@@ -1,6 +1,10 @@
-import { commonSpeedUnits, Speed, Speeds as SpeedValues } from '@wowfinder/model';
-import { Speeds } from '../../../Components/Creature';
+import {
+    Speed,
+    Speeds as SpeedValues,
+    commonSpeedUnits,
+} from '@wowfinder/model';
 import { FlyManeuverability } from '@wowfinder/ts-enums';
+import { Speeds } from '../../../Components/Creature';
 
 export default {
     title: 'Creature/Speed/Speeds',
@@ -21,7 +25,8 @@ const defaultSpeeds = new SpeedValues({
 });
 
 const Template = (args: { speeds: SpeedValues }): React.ReactNode => (
-    <Speeds {...args} />);
+    <Speeds {...args} />
+);
 
 export const Default = Template.bind(this, {
     speeds: defaultSpeeds,

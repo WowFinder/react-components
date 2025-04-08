@@ -15,6 +15,7 @@ import {
 } from '../../../styles';
 import { Maneuverability } from './Maneuverability';
 import { SpeedCells } from './SpeedCells';
+import { ChildlessFC } from '../../../helpers';
 
 const StyledTable = styled.table`
     & th,
@@ -60,7 +61,7 @@ type CellsProps = {
     speed: Speed;
 };
 
-const Cells = ({ hkey, name, speed }: CellsProps) => {
+const Cells: ChildlessFC<CellsProps> = ({ hkey, name, speed }) => {
     const { t } = useTranslation();
     const heading = t(`charsheet.speed.${hkey}`) ?? '';
     return <SpeedCells {...{ name, speed, heading }} />;
@@ -72,7 +73,7 @@ type SpeedsProps = {
 
 const zeroSpeed = new Speed({ value: 0, unit: commonSpeedUnits.feetTurn });
 
-const Speeds = ({ speeds }: SpeedsProps) => {
+const Speeds: ChildlessFC<SpeedsProps> = ({ speeds }) => {
     return (
         <StyledTable>
             <tbody>
