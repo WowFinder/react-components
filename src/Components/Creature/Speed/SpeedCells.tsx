@@ -1,5 +1,5 @@
+import { FC } from 'react';
 import { type Speed } from '@wowfinder/model';
-import { ChildlessFC } from '../../../helpers';
 import { InputSuffixedCell } from '../../helpers/InputCell';
 import { TargetUnit, targetUnits } from './TargetUnit';
 
@@ -9,7 +9,7 @@ type InputSpeedCellProps = {
     targetUnit?: TargetUnit;
 };
 
-const InputSpeedCell: ChildlessFC<InputSpeedCellProps> = ({
+const InputSpeedCell: FC<InputSpeedCellProps> = ({
     id,
     speed,
     targetUnit = targetUnits.feet,
@@ -24,7 +24,7 @@ type EmptySpeedProps = {
     heading?: string;
 };
 
-const EmptySpeed: ChildlessFC<EmptySpeedProps> = ({ heading }) => (
+const EmptySpeed: FC<EmptySpeedProps> = ({ heading }) => (
     <>
         {heading && <th>{heading}</th>}
         <td></td>
@@ -39,7 +39,7 @@ type SpeedCellsProps = {
     heading?: string;
 };
 
-const SpeedCells: ChildlessFC<SpeedCellsProps> = ({ name, speed, heading }) => {
+const SpeedCells: FC<SpeedCellsProps> = ({ name, speed, heading }) => {
     if (!speed?.value) {
         return <EmptySpeed heading={heading} />;
     }

@@ -1,5 +1,5 @@
+import { FC } from 'react';
 import { sum } from '@wowfinder/ts-utils';
-import { ChildlessFC } from '../../../helpers';
 import { ModCell } from '../../helpers/InputCell';
 
 type AttackScoresRowProps = {
@@ -10,7 +10,7 @@ type AttackScoresRowProps = {
     sizeModifier?: number;
 };
 
-const AttackScoresRow: ChildlessFC<AttackScoresRowProps> = ({
+const AttackScoresRow: FC<AttackScoresRowProps> = ({
     label,
     idSuffix,
     baseAttackBonus = 0,

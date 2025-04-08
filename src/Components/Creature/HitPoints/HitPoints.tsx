@@ -1,6 +1,6 @@
+import { FC } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '@wowfinder/translations';
-import { ChildlessFC } from '../../../helpers';
 import { borderless, printableBottomBorder, smallText } from '../../../styles';
 
 type HitPointProps = {
@@ -36,7 +36,7 @@ const StyledTable = styled.table`
     }
 `;
 
-const HitPoints: ChildlessFC<HitPointProps> = ({
+const HitPoints: FC<HitPointProps> = ({
     base,
     current,
     misc = 0,

@@ -1,6 +1,6 @@
+import { FC } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Spinner, type SpinnerProps } from '../Components/helpers/Spinner';
-import { type ChildlessFC } from '../helpers';
 
 type WrapperProps = Pick<SpinnerProps, 'color' | 'strokeStyle' | 'opacity'> & {
     size: number;
@@ -8,7 +8,7 @@ type WrapperProps = Pick<SpinnerProps, 'color' | 'strokeStyle' | 'opacity'> & {
     rotationPeriod: number;
 };
 
-const Wrapper: ChildlessFC<WrapperProps> = ({
+const Wrapper: FC<WrapperProps> = ({
     size,
     thickness,
     color,
@@ -28,7 +28,7 @@ const Wrapper: ChildlessFC<WrapperProps> = ({
 
 type Story = StoryObj<WrapperProps>;
 
-const meta: Meta<ChildlessFC<WrapperProps>> = {
+const meta: Meta<FC<WrapperProps>> = {
     title: 'Spinner',
     component: Wrapper,
     argTypes: {

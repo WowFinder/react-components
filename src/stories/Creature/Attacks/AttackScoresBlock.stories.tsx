@@ -1,10 +1,10 @@
+import { FC } from 'react';
 import { type Meta, type StoryObj } from '@storybook/react';
 import { mixedStatsMock } from '@wowfinder/model';
 import {
     AttackScoresBlock,
     type AttackScoresBlockProps,
 } from '../../../Components/Creature/Attacks';
-import { type ChildlessFC } from '../../../helpers';
 
 type WrapperProps = Pick<
     AttackScoresBlockProps,
@@ -14,7 +14,7 @@ type WrapperProps = Pick<
     dex: number;
 };
 
-const Wrapper: ChildlessFC<WrapperProps> = ({
+const Wrapper: FC<WrapperProps> = ({
     baseAttackBonus,
     sizeModifier,
     str,
@@ -41,7 +41,7 @@ const numberControl = {
     },
 } as const;
 
-const meta: Meta<ChildlessFC<WrapperProps>> = {
+const meta: Meta<FC<WrapperProps>> = {
     title: 'Creature/Attacks/AttackScoresBlock',
     component: Wrapper,
     argTypes: {

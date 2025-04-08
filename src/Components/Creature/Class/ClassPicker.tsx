@@ -1,17 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { type Class } from '@wowfinder/model';
 import { useTranslation } from '@wowfinder/translations';
-import { type ChildlessFC } from '../../../helpers';
 
 type ClassPickerEntryProps = {
     readonly cls: Class;
     readonly selected: boolean;
 };
 
-const ClassPickerEntry: ChildlessFC<ClassPickerEntryProps> = ({
-    cls,
-    selected,
-}) => {
+const ClassPickerEntry: FC<ClassPickerEntryProps> = ({ cls, selected }) => {
     const { t } = useTranslation();
     const selectedProp = selected ? { selected: true } : {};
     const k = cls.key;
@@ -26,7 +22,7 @@ type EmptyClassPickerEntryProps = {
     readonly selected: boolean;
 };
 
-const EmptyClassPickerEntry: ChildlessFC<EmptyClassPickerEntryProps> = ({
+const EmptyClassPickerEntry: FC<EmptyClassPickerEntryProps> = ({
     selected,
 }) => {
     const selectedProp = selected ? { selected: true } : {};
@@ -48,7 +44,7 @@ type ClassPickerProps = Readonly<
     ClassPickerPropsNonEmpty | ClassPickerPropsEmpty
 >;
 
-const ClassPicker: ChildlessFC<ClassPickerProps> = ({
+const ClassPicker: FC<ClassPickerProps> = ({
     classes,
     initialSelection,
     allowEmpty = false,

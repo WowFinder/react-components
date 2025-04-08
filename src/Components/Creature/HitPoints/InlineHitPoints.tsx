@@ -1,6 +1,6 @@
+import { FC } from 'react';
 import { styled } from 'styled-components';
 import { useTranslation } from '@wowfinder/translations';
-import { ChildlessFC } from '../../../helpers';
 
 type InlineHitPointsProps = {
     readonly max: number;
@@ -11,10 +11,7 @@ const StyledSpan = styled.span`
     display: inline-block;
 `;
 
-const InlineHitPoints: ChildlessFC<InlineHitPointsProps> = ({
-    max,
-    current = max,
-}) => {
+const InlineHitPoints: FC<InlineHitPointsProps> = ({ max, current = max }) => {
     const { t } = useTranslation();
     const heading = t('class.ui.hp');
     const value = `${current}/${max}`;

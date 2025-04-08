@@ -1,9 +1,9 @@
+import { FC } from 'react';
 import { type Meta, type StoryObj } from '@storybook/react';
 import {
     InlineHitPoints,
     type InlineHitPointsProps,
 } from '../../../Components/Creature/HitPoints';
-import { type ChildlessFC } from '../../../helpers';
 
 type Story = StoryObj<InlineHitPointsProps>;
 
@@ -16,7 +16,7 @@ const numberControl = {
     },
 } as const;
 
-const meta: Meta<ChildlessFC<InlineHitPointsProps>> = {
+const meta: Meta<FC<InlineHitPointsProps>> = {
     title: 'Creature/HitPoints/InlineHitPoints',
     component: InlineHitPoints,
     argTypes: {

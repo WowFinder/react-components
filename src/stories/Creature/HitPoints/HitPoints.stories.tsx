@@ -1,9 +1,9 @@
+import { FC } from 'react';
 import { type Meta, type StoryObj } from '@storybook/react';
 import {
     type HitPointProps,
     HitPoints,
 } from '../../../Components/Creature/HitPoints';
-import { type ChildlessFC } from '../../../helpers';
 
 type Story = StoryObj<HitPointProps>;
 
@@ -16,7 +16,7 @@ const numberControl = {
     },
 } as const;
 
-const meta: Meta<ChildlessFC<HitPointProps>> = {
+const meta: Meta<FC<HitPointProps>> = {
     title: 'Creature/HitPoints/HitPoints',
     component: HitPoints,
     argTypes: {
