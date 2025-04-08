@@ -35,5 +35,7 @@ jobs:
             - name: Chromatic build
               uses: chromaui/action@latest
               with:
+                exitOnceUploaded: true
+                onlyChanged: true
                 projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
                 token: ${{ secrets.GITHUB_TOKEN }}
