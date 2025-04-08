@@ -1,6 +1,7 @@
 import React from 'react';
 import { vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderInTable } from '../../../__tests__/helpers';
 import {
     CheckCell,
     InputCell,
@@ -14,16 +15,6 @@ vi.mock('@wowfinder/translations', () => ({
         t: (key: string) => key,
     }),
 }));
-
-function renderInTable(element: React.ReactElement): ReturnType<typeof render> {
-    return render(
-        <table>
-            <tbody>
-                <tr>{element}</tr>
-            </tbody>
-        </table>,
-    );
-}
 
 describe('InputH', () => {
     it('renders with basic props', () => {
