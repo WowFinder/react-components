@@ -1,13 +1,13 @@
+import { FC } from 'react';
 import { ManeuverabilitySortedValues } from '@wowfinder/model';
 import { useTranslation } from '@wowfinder/translations';
 import { FlyManeuverability } from '@wowfinder/ts-enums';
-import { ChildlessFC } from '../../../helpers';
 
 type ManeuverabilityProps = {
     readonly value?: FlyManeuverability;
 };
 
-const Maneuverability: ChildlessFC<ManeuverabilityProps> = ({ value }) => {
+const Maneuverability: FC<ManeuverabilityProps> = ({ value }) => {
     const { t: translate } = useTranslation();
     const t = (key: string): string =>
         translate(`charsheet.speed.maneuverability.${key}`);

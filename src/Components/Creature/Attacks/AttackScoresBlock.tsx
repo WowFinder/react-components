@@ -1,7 +1,7 @@
+import { FC } from 'react';
 import { RawStats } from '@wowfinder/asset-schemas';
 import { statMod } from '@wowfinder/model';
 import { useTranslation } from '@wowfinder/translations';
-import { ChildlessFC } from '../../../helpers';
 import { AttackScoresRow } from './AttackScoresBlock.Row';
 import { AttackScoresBlockTable } from './AttackScoresBlock.Table';
 
@@ -13,7 +13,7 @@ type AttackScoresBlockProps = {
     sizeModifier?: number;
 };
 
-const AttackScoresBlock: ChildlessFC<AttackScoresBlockProps> = ({
+const AttackScoresBlock: FC<AttackScoresBlockProps> = ({
     baseAttackBonus = 0,
     stats = {},
     sizeModifier = 0,
