@@ -54,13 +54,20 @@ const multiStats: MultiStats = [
     },
 ];
 
-const statMocks = {
+const statMocks: {
+    defaults: RawStats;
+    twenty: RawStats;
+    gear: RawStats;
+    total: RawStats;
+    mods: RawStats;
+    multiStats: MultiStats;
+} = {
     defaults,
     twenty,
     gear,
     total,
     mods,
     multiStats,
-};
+} as const;
 
 export { statMocks, type StatsColumn };
