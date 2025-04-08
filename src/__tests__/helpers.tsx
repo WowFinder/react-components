@@ -1,4 +1,5 @@
-import { type render } from '@testing-library/react';
+import React from 'react';
+import { render } from '@testing-library/react';
 
 function expectExportFC(component: Function): void {
     expect(component).toBeDefined();
@@ -44,10 +45,21 @@ function expectInputValue(
     expect(input?.value).toBe(value);
 }
 
+function renderInTable(element: React.ReactElement): ReturnType<typeof render> {
+    return render(
+        <table>
+            <tbody>
+                <tr>{element}</tr>
+            </tbody>
+        </table>,
+    );
+}
+
 export {
     expectExportFC,
     expectExactExportFCs,
     capFirst,
     expectCellValue,
     expectInputValue,
+    renderInTable,
 };
