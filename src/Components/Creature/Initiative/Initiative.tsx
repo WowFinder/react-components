@@ -76,7 +76,7 @@ const Initiative: React.FC<InitiativeProps> = ({
                         />
                     </td>
                 </tr>
-            </tbody>{' '}
+            </tbody>
         </StyledTable>
     );
 };
