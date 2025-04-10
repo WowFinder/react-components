@@ -2242,10 +2242,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsd/typescript@npm:~5.4.3":
-  version: 5.4.5
-  resolution: "@tsd/typescript@npm:5.4.5"
-  checksum: 10c0/df50a5263809cf28bac6e7615f0960c21b4952237872a1a683c906415e224b747f885d0f05aaaa3665ab4fb66a64f85a8f6901065628c512da9673c8776538e1
+"@tsd/typescript@npm:~5.8.3":
+  version: 5.8.3
+  resolution: "@tsd/typescript@npm:5.8.3"
+  checksum: 10c0/d136086026f66286fb4f5b02f88109c4bcfe965956620c8eec2ee9aebe9e2d03caba208df0c0612209954de2df4ef2f9ff1c845b8d500b7db6e819585d3ade71
   languageName: node
   linkType: hard
 
@@ -2481,12 +2481,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^19.1.1":
-  version: 19.1.1
-  resolution: "@types/react-dom@npm:19.1.1"
+"@types/react-dom@npm:^19.1.2":
+  version: 19.1.2
+  resolution: "@types/react-dom@npm:19.1.2"
   peerDependencies:
     "@types/react": ^19.0.0
-  checksum: 10c0/83833af502f501a372b370fdeb7cf933dfc8780903fe0e0d6e6a76b4ea3adbe5316159a62a0388d8afdd409afd76a40959e2ce82fbb788f57d32c786a63601ee
+  checksum: 10c0/100c341cacba9ec8ae1d47ee051072a3450e9573bf8eeb7262490e341cb246ea0f95a07a1f2077e61cf92648f812a0324c602fcd811bd87b7ce41db2811510cd
   languageName: node
   linkType: hard
 
@@ -3091,37 +3091,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wowfinder/asset-schemas@npm:^0.0.15":
-  version: 0.0.15
-  resolution: "@wowfinder/asset-schemas@npm:0.0.15"
-  dependencies:
-    "@wowfinder/ts-enums": "npm:^0.0.16"
-    ajv: "npm:^8.17.1"
-    globals: "npm:^16.0.0"
-  checksum: 10c0/761fa44b7fe022905a232d58ec96d2db625a779d071bba619508e671db85a7fa942dc245a617e9d6d53db92a673b98b5e6a4eee9dc07c14b36f5a5c7ff601f62
-  languageName: node
-  linkType: hard
-
-"@wowfinder/asset-schemas@npm:^0.0.16":
-  version: 0.0.16
-  resolution: "@wowfinder/asset-schemas@npm:0.0.16"
-  dependencies:
-    "@wowfinder/ts-enums": "npm:^0.0.18"
-    ajv: "npm:^8.17.1"
-    globals: "npm:^16.0.0"
-  checksum: 10c0/0b416031a249e729b8ea6ed15e7ba2fede6873bf261c0f6bae155c777f73c8d6cf8e099f2d92f61e2e238334beef57fe624e8db855b8210b7b4cc78822d499e4
-  languageName: node
-  linkType: hard
-
-"@wowfinder/model@npm:^0.0.17":
+"@wowfinder/asset-schemas@npm:^0.0.17":
   version: 0.0.17
-  resolution: "@wowfinder/model@npm:0.0.17"
+  resolution: "@wowfinder/asset-schemas@npm:0.0.17"
   dependencies:
-    "@wowfinder/asset-schemas": "npm:^0.0.15"
-    "@wowfinder/ts-enums": "npm:^0.0.18"
-    "@wowfinder/ts-utils": "npm:^0.1.9"
+    "@wowfinder/ts-enums": "npm:^0.0.19"
+    ajv: "npm:^8.17.1"
     globals: "npm:^16.0.0"
-  checksum: 10c0/3c513ccdbf626b62159ea2a0c05432578bde93b64f44cf4a1fcc5e86ed2a84d8f04f8c383b99b61fe2d3d8c6e991bd8a9e75c5872988b4906ee7128e6186072e
+  checksum: 10c0/f82bd9b841aef2de15e102b2b7378c426f57fac2f07ad71a9aba34f704fe7b0db8ffcc5d3c9f4547a3ae461fdc68be53b3afc8662c06c6ec1c81b0f53971d869
+  languageName: node
+  linkType: hard
+
+"@wowfinder/model@npm:^0.0.18":
+  version: 0.0.18
+  resolution: "@wowfinder/model@npm:0.0.18"
+  dependencies:
+    "@wowfinder/asset-schemas": "npm:^0.0.17"
+    "@wowfinder/ts-enums": "npm:^0.0.19"
+    "@wowfinder/ts-utils": "npm:^0.1.10"
+    globals: "npm:^16.0.0"
+  checksum: 10c0/1e7399c9bb379a23a9d86c16b7526c218c386f3e408b734d2533c020515d08ed961203235a56c35a47ae94db1c182986382e83979682b8a65a008c0b7b75bf33
   languageName: node
   linkType: hard
 
@@ -3147,21 +3136,21 @@ __metadata:
     "@tsconfig/recommended": "npm:^1.0.8"
     "@types/jest": "npm:^29.5.14"
     "@types/react": "npm:^19.1.0"
-    "@types/react-dom": "npm:^19.1.1"
+    "@types/react-dom": "npm:^19.1.2"
     "@types/styled-components": "npm:^5.1.34"
     "@typescript-eslint/eslint-plugin": "npm:^8.29.1"
     "@typescript-eslint/parser": "npm:^8.29.1"
     "@typescript-eslint/utils": "npm:^8.29.1"
     "@vitest/coverage-v8": "npm:^3.1.1"
-    "@wowfinder/asset-schemas": "npm:^0.0.16"
-    "@wowfinder/model": "npm:^0.0.17"
-    "@wowfinder/translations": "npm:^0.0.5"
-    "@wowfinder/ts-enums": "npm:^0.0.18"
-    "@wowfinder/ts-utils": "npm:^0.1.9"
+    "@wowfinder/asset-schemas": "npm:^0.0.17"
+    "@wowfinder/model": "npm:^0.0.18"
+    "@wowfinder/translations": "npm:^0.0.6"
+    "@wowfinder/ts-enums": "npm:^0.0.19"
+    "@wowfinder/ts-utils": "npm:^0.1.10"
     c8: "npm:^10.1.3"
     chromatic: "npm:^11.28.0"
     eslint: "npm:^9.24.0"
-    eslint-config-prettier: "npm:^10.1.1"
+    eslint-config-prettier: "npm:^10.1.2"
     eslint-plugin-deprecation: "npm:^3.0.0"
     eslint-plugin-import: "npm:^2.31.0"
     eslint-plugin-istanbul: "npm:^0.1.2"
@@ -3189,18 +3178,18 @@ __metadata:
     storybook-react-i18next: "npm:^3.2.1"
     styled-components: "npm:^6.1.17"
     ts-jest: "npm:^29.3.1"
-    tsd: "npm:^0.31.2"
+    tsd: "npm:^0.32.0"
     typescript: "npm:^5.8.3"
-    vite: "npm:^6.2.5"
+    vite: "npm:^6.2.6"
     vitest: "npm:^3.1.1"
   languageName: unknown
   linkType: soft
 
-"@wowfinder/translations@npm:^0.0.5":
-  version: 0.0.5
-  resolution: "@wowfinder/translations@npm:0.0.5"
+"@wowfinder/translations@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "@wowfinder/translations@npm:0.0.6"
   dependencies:
-    "@wowfinder/ts-utils": "npm:^0.1.8"
+    "@wowfinder/ts-utils": "npm:^0.1.10"
     globals: "npm:^16.0.0"
     i18next: "npm:^24.2.3"
     i18next-browser-languagedetector: "npm:^8.0.4"
@@ -3208,43 +3197,25 @@ __metadata:
     path-browserify: "npm:^1.0.1"
     react: "npm:^19.1.0"
     react-i18next: "npm:^15.4.1"
-  checksum: 10c0/cbd9257783a4ba81074ddc6ac3f2b5a1bbcb12fdaf797f16cf57f61073edcdb668068f9f29a7ef365ba6cddc63ae762ad0b3d00f6aec1235cfced2a2d4545f71
+  checksum: 10c0/4f276d78722e60e59615c3c0f429cadab9dca00a779c5a253f3e31b6a01eb2e24e973f9874609984f2649c1d9f71c5d2f9ad25cd9e9bf53d5605ea2a5444c8a3
   languageName: node
   linkType: hard
 
-"@wowfinder/ts-enums@npm:^0.0.16":
-  version: 0.0.16
-  resolution: "@wowfinder/ts-enums@npm:0.0.16"
+"@wowfinder/ts-enums@npm:^0.0.19":
+  version: 0.0.19
+  resolution: "@wowfinder/ts-enums@npm:0.0.19"
   dependencies:
     globals: "npm:^16.0.0"
-  checksum: 10c0/2e70288c64a05e28fd3d616e059e498e0b41d6827ebd96c867c0ed527598581701a8a41950b627920d20883d27d78f17c5b9c703e2c31cdf864e45d1e3dc7350
+  checksum: 10c0/2f0dfb4878fffd771cd4ee8ff7eb21cd8b8df836947e861ecb3063c1e688bcd1f236f3c8095b6465421b4447d2f3827ea2dde16d12a08eb57437cbd20a8d09dd
   languageName: node
   linkType: hard
 
-"@wowfinder/ts-enums@npm:^0.0.18":
-  version: 0.0.18
-  resolution: "@wowfinder/ts-enums@npm:0.0.18"
+"@wowfinder/ts-utils@npm:^0.1.10":
+  version: 0.1.10
+  resolution: "@wowfinder/ts-utils@npm:0.1.10"
   dependencies:
     globals: "npm:^16.0.0"
-  checksum: 10c0/191ec49331191f043f1f4802b83c5fab3f87dc750bb9dc80494a53000ac0883bc5d4a68ed2f782cc3ea9f240d92289f55647d77587bc2e0aec03eb41275710d3
-  languageName: node
-  linkType: hard
-
-"@wowfinder/ts-utils@npm:^0.1.8":
-  version: 0.1.8
-  resolution: "@wowfinder/ts-utils@npm:0.1.8"
-  dependencies:
-    globals: "npm:^16.0.0"
-  checksum: 10c0/5d68f884fda31da048140fe90cf9b76c236c3a958cb3332d2daf16ff636aa1a5e1a5a6d7c2305a4b33a78da8bf0d7bf71d5a5296649d823644fe4d381f0f16d5
-  languageName: node
-  linkType: hard
-
-"@wowfinder/ts-utils@npm:^0.1.9":
-  version: 0.1.9
-  resolution: "@wowfinder/ts-utils@npm:0.1.9"
-  dependencies:
-    globals: "npm:^16.0.0"
-  checksum: 10c0/c2f29144bd86893cef2e1e52dd9325099ca40724c5280e49c03820c0b27cbcfd82b612fd98a23728421c2c2eccaf75eaad4a53d5b9592b5aed17779065bdbb4e
+  checksum: 10c0/a24d39708cdb188b29fcb9abc45e7d2a2b0129f6fe05e2775a0d226f9b3b1c455eb613c6a5713f2b21b58642fe8daa5f38d0fe36b86a03b08ab807bf4649ee25
   languageName: node
   linkType: hard
 
@@ -5214,14 +5185,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^10.1.1":
-  version: 10.1.1
-  resolution: "eslint-config-prettier@npm:10.1.1"
+"eslint-config-prettier@npm:^10.1.2":
+  version: 10.1.2
+  resolution: "eslint-config-prettier@npm:10.1.2"
   peerDependencies:
     eslint: ">=7.0.0"
   bin:
     eslint-config-prettier: bin/cli.js
-  checksum: 10c0/3dbfdf6495dd62e2e1644ea9e8e978100dabcd8740fd264df1222d130001a1e8de05d6ed6c67d3a60727386a07507f067d1ca79af6d546910414beab19e7966e
+  checksum: 10c0/c22c8e29193cc8fd70becf1c2dd072513f2b3004a175c2a49404c79d1745ba4dc0edc2afd00d16b0e26d24f95813a0469e7445a25104aec218f6d84cdb1697e9
   languageName: node
   linkType: hard
 
@@ -11015,11 +10986,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsd@npm:^0.31.2":
-  version: 0.31.2
-  resolution: "tsd@npm:0.31.2"
+"tsd@npm:^0.32.0":
+  version: 0.32.0
+  resolution: "tsd@npm:0.32.0"
   dependencies:
-    "@tsd/typescript": "npm:~5.4.3"
+    "@tsd/typescript": "npm:~5.8.3"
     eslint-formatter-pretty: "npm:^4.1.0"
     globby: "npm:^11.0.1"
     jest-diff: "npm:^29.0.3"
@@ -11028,7 +10999,7 @@ __metadata:
     read-pkg-up: "npm:^7.0.0"
   bin:
     tsd: dist/cli.js
-  checksum: 10c0/359af4639695cb7c55e011329e24929c257a969194a30ec6a71c6b443b7e1c5de386319a8e47464c8545c979e59ce7fcd6063836ab7883df13cdb0be856d6ab7
+  checksum: 10c0/371e8269052f9665b7290e2049ddcc36c67320028715632b0e3e4666e6dfa8a935c801fbdcaa94393ffb7e439c4cdcb6142859560d21d2a938f5c240e7f10833
   languageName: node
   linkType: hard
 
@@ -11484,9 +11455,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^6.2.5":
-  version: 6.2.5
-  resolution: "vite@npm:6.2.5"
+"vite@npm:^6.2.6":
+  version: 6.2.6
+  resolution: "vite@npm:6.2.6"
   dependencies:
     esbuild: "npm:^0.25.0"
     fsevents: "npm:~2.3.3"
@@ -11532,7 +11503,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c0/226bb3c1875e1982559007007580e8d083b81f5289f18e28841d622ba030599e1bd9926adccc8264879e319e9f9e4f48a38a0dc52a5dfcdf2a9cb7313bfc1816
+  checksum: 10c0/68a2ed3e61bdd654c59b817b4f3203065241c66d1739faa707499130f3007bc3a666c7a8320a4198e275e62b5e4d34d9b78a6533f69e321d366e76f5093b2071
   languageName: node
   linkType: hard
 
