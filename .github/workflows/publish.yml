@@ -1,0 +1,52 @@
+name: Build and Publish
+
+on:
+  push:
+    tags:
+      - 'v*' # Triggers the workflow when a tag starting with "v" (e.g., v1.0.0) is pushed
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org/'
+      
+      - name: Setup token authentication for npmjs
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+          yarn config set npmAuthToken "${{ secrets.NPM_TOKEN }}"
+
+      - name: Install dependencies
+        run: yarn
+      - name: Lint validation
+        run: yarn lint
+      - name: Check and apply pending verions
+        run: yarn version apply
+      - name: Extract tag name
+        run: echo "TAG_VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+      - name: Module compilation and build
+        run: yarn build
+      - name: Ensure version match
+        run: |
+          if [ "$(jq -r .version package.json)" != "${TAG_VERSION}" ]; then
+            echo "Version mismatch: package.json version is $(jq -r .version package.json), but tag version is ${TAG_VERSION}"
+            exit 1
+          fi
+
+      # Publish your module to npmjs.org
+      - name: Publish to npmjs
+        run: |
+          cd dist
+          yarn
+          yarn npm publish --access public
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
