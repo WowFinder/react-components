@@ -112,12 +112,15 @@ function InputSuffixedCell({
     );
 }
 
+const EmptyTd = (): React.JSX.Element => <td></td>;
+
 export {
     InputH,
     InputCell,
     ModCell,
     CheckCell,
     InputSuffixedCell,
+    EmptyTd,
     type CellArgs,
     type CellArgsStrict,
     type ModCellProps,

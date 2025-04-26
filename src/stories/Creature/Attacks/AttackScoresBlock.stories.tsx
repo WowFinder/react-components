@@ -4,7 +4,7 @@ import { mixedStatsMock } from '@wowfinder/model';
 import {
     AttackScoresBlock,
     type AttackScoresBlockProps,
-} from '../../../Components/Creature/Attacks';
+} from '../../../Components/Creature/Attack';
 
 type WrapperProps = Pick<
     AttackScoresBlockProps,
