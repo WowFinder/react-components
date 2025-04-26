@@ -4,6 +4,7 @@ import { screen } from '@testing-library/react';
 import { renderInTable } from '../../../__tests__/helpers';
 import {
     CheckCell,
+    EmptyTd,
     InputCell,
     InputH,
     InputSuffixedCell,
@@ -128,5 +129,14 @@ describe('InputSuffixedCell', () => {
         const span = screen.getByTestId('InputSuffixedCell-span');
         expect(span.textContent).toBe('%');
         expect(span.className).toBe('suffix');
+    });
+});
+
+describe('EmptyTd', () => {
+    it('renders an empty table cell', () => {
+        const result = renderInTable(<EmptyTd />);
+        const tds = result.container.querySelectorAll('td');
+        expect(tds.length).toBe(1);
+        expect(tds[0].textContent).toBe('');
     });
 });
