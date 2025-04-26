@@ -1,4 +1,4 @@
-export * from './Attacks';
+export * from './Attack';
 export * from './Class';
 export * from './HitPoints';
 export * from './Resistances';
