@@ -1,15 +1,12 @@
 import { FC } from 'react';
 import { type Meta, type StoryObj } from '@storybook/react';
 import { FullArmorValues, mixedStatsMock, statMod } from '@wowfinder/model';
-import {
-    DefenseScoresBlock,
-    type DefenseScoresBlockProps,
-} from '../../../Components/Creature/Defense';
 import { type FullArmorValuesBuilder } from '@wowfinder/model/Creature/ArmorValues/builder';
+import { DefenseScoresBlock } from '../../../Components/Creature/Defense';
 
 type WrapperProps = FullArmorValuesBuilder;
 
-const Wrapper: FC<WrapperProps> = (props) => (
+const Wrapper: FC<WrapperProps> = props => (
     <DefenseScoresBlock values={new FullArmorValues(props)} />
 );
 
@@ -87,12 +84,8 @@ const meta: Meta<FC<WrapperProps>> = {
         dexterity: statMod(mixedStatsMock.dexterity),
         baseAttack: -2,
         size: 0,
-    }
+    },
 };
-
-const Temnplate = ({ ...args }: DefenseScoresBlockProps): React.ReactNode => (
-    <DefenseScoresBlock {...args} />
-);
 
 export const Default: Story = {};
 export default meta;

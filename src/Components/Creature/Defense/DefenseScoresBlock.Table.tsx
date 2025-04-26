@@ -5,7 +5,6 @@ import {
     colors,
     printableBottomBorder,
     reverseColors,
-    smallText,
 } from '../../../styles';
 
 const DefenseScoresBlockTable = styled.table`
