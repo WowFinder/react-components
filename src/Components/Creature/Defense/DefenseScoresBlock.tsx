@@ -23,6 +23,7 @@ const cmdHeadings: string[] = [
 ] as const;
 
 const statKeys = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'] as const;
+const attackKeys = ['bab' ] as const;
 const commonKeys = ['size'] as const;
 
 function useTranslatedHeading(key: string): string {
@@ -35,6 +36,8 @@ function useTranslatedHeading(key: string): string {
         prefix = 'stats.abbr.';
     } else if (commonKeys.includes(key as any)) {
         prefix = 'charsheet.common.';
+    } else if (attackKeys.includes(key as any)) {
+        prefix = 'charsheet.attack.';
     }
 
     const { t } = useTranslation();
