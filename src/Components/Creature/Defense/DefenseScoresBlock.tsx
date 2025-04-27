@@ -4,8 +4,64 @@ import { InputCell, InputH } from '../../helpers/InputCell';
 import { ArmorRow } from './Armor.Row';
 import { DefenseScoresBlockTable } from './DefenseScoresBlock.Table';
 
+const commonInitialHeadings: string[] = ['', 'total', ''] as const;
+const commonFinalHeadings: string[] = ['size', 'defl', 'misc', 'temp'] as const;
+
+const armorHeadings: string[] = [
+    ...commonInitialHeadings,
+    'armor',
+    'DEX',
+    'nat',
+    ...commonFinalHeadings,
+] as const;
+const cmdHeadings: string[] = [
+    ...commonInitialHeadings,
+    'bab',
+    'STR',
+    'DEX',
+    ...commonFinalHeadings,
+] as const;
+
+const statKeys = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'] as const;
+const commonKeys = ['size'] as const;
+
+function useTranslatedHeading(key: string): string {
+    if (!key) {
+        return '';
+    }
+
+    let prefix: string = 'charsheet.armor.';
+    if (statKeys.includes(key as any)) {
+        prefix = 'stats.abbr.';
+    } else if (commonKeys.includes(key as any)) {
+        prefix = 'charsheet.common.';
+    }
+
+    const { t } = useTranslation();
+    return t(`${prefix}${key}`);
+}
+
+type DefensesHeadingsProps = {
+    readonly headings: string[];
+};
+function DefensesHeadings({
+    headings,
+}: DefensesHeadingsProps): React.JSX.Element {
+    return (
+        <thead>
+            <tr>
+                {headings.map((heading, index) => (
+                    <th key={`${heading}-${index}`}>
+                        {useTranslatedHeading(heading)}
+                    </th>
+                ))}
+            </tr>
+        </thead>
+    );
+}
+
 type DefenseScoresBlockProps = {
-    values: FullArmorValues;
+    readonly values: FullArmorValues;
 };
 
 function DefenseScoresBlock({
@@ -14,20 +70,7 @@ function DefenseScoresBlock({
     const { t } = useTranslation();
     return (
         <DefenseScoresBlockTable>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>{t('charsheet.armor.total')}</th>
-                    <th></th>
-                    <th>{t('charsheet.armor.armor')}</th>
-                    <th>{t('stats.abbr.DEX')}</th>
-                    <th>{t('charsheet.common.size')}</th>
-                    <th>{t('charsheet.armor.nat')}</th>
-                    <th>{t('charsheet.armor.defl')}</th>
-                    <th>{t('charsheet.armor.misc')}</th>
-                    <th>{t('charsheet.armor.temp')}</th>
-                </tr>
-            </thead>
+            <DefensesHeadings headings={armorHeadings} />
             <tbody>
                 <ArmorRow
                     label={t('charsheet.armor.AC')}
@@ -47,20 +90,7 @@ function DefenseScoresBlock({
                     skipEvasive={true}
                 />
             </tbody>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>{t('charsheet.armor.total')}</th>
-                    <th></th>
-                    <th>{t('charsheet.attack.bab')}</th>
-                    <th>{t('stats.abbr.STR')}</th>
-                    <th>{t('stats.abbr.DEX')}</th>
-                    <th>{t('charsheet.common.size')}</th>
-                    <th>{t('charsheet.armor.defl')}</th>
-                    <th>{t('charsheet.armor.misc')}</th>
-                    <th>{t('charsheet.armor.temp')}</th>
-                </tr>
-            </thead>
+            <DefensesHeadings headings={cmdHeadings} />
             <tbody>
                 <tr>
                     <th>{t('charsheet.armor.cmd')}</th>

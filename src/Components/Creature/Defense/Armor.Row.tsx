@@ -2,11 +2,11 @@ import { FullArmorValues } from '@wowfinder/model';
 import { EmptyTd, InputCell, InputH } from '../../helpers/InputCell';
 
 type ArmorRowArgs = {
-    label: string;
-    idPrefix: string;
-    values?: FullArmorValues;
-    skipPhysical?: boolean;
-    skipEvasive?: boolean;
+    readonly label: string;
+    readonly idPrefix: string;
+    readonly values?: FullArmorValues;
+    readonly skipPhysical?: boolean;
+    readonly skipEvasive?: boolean;
 };
 
 function ArmorRow({
@@ -32,7 +32,6 @@ function ArmorRow({
             ) : (
                 <InputCell id={`txt${idPrefix}Dex`} value={values?.dexterity} />
             )}
-            <InputCell id={`txt${idPrefix}Size`} value={values?.size} />
             {skipPhysical ? (
                 <EmptyTd />
             ) : (
@@ -42,6 +41,7 @@ function ArmorRow({
                     hideZero={true}
                 />
             )}
+            <InputCell id={`txt${idPrefix}Size`} value={values?.size} />
             <InputCell
                 id={`txt${idPrefix}Deflect`}
                 value={values?.deflection}
