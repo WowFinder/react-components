@@ -23,7 +23,7 @@ const cmdHeadings: string[] = [
 ] as const;
 
 const statKeys = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'] as const;
-const attackKeys = ['bab' ] as const;
+const attackKeys = ['bab'] as const;
 const commonKeys = ['size'] as const;
 
 function useTranslatedHeading(key: string): string {
