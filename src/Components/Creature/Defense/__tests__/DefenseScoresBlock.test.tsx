@@ -17,7 +17,7 @@ describe('DefenseScoresBlock', () => {
     it('should render correctly', async () => {
         const defenseScoresMockData: DefenseScoresBlockProps = {
             values: new FullArmorValues({
-                armor: 1,
+                gear: 1,
                 natural: 2,
                 deflection: 3,
                 misc: 4,

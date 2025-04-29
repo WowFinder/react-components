@@ -25,9 +25,9 @@ const meta: Meta<FC<WrapperProps>> = {
     title: 'Creature/Defense/DefenseScoresBlock',
     component: Wrapper,
     argTypes: {
-        armor: {
+        gear: {
             ...numberControl,
-            description: 'Armor bonus',
+            description: 'Armor bonus from gear',
         },
         natural: {
             ...numberControl,
@@ -71,7 +71,7 @@ const meta: Meta<FC<WrapperProps>> = {
         },
     },
     args: {
-        armor: 1,
+        gear: 1,
         natural: 2,
         deflection: 3,
         misc: 4,

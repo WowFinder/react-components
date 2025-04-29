@@ -24,8 +24,7 @@ function ArmorRow({
             {skipPhysical ? (
                 <EmptyTd />
             ) : (
-                // TODO: Replace with `gear` (depends on https://github.com/WowFinder/model/issues/184)
-                <InputCell id={`txt${idPrefix}Armor`} value={values?.armor} />
+                <InputCell id={`txt${idPrefix}Armor`} value={values?.gear} />
             )}
             {skipEvasive ? (
                 <EmptyTd />
