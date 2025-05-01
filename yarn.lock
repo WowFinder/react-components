@@ -10695,16 +10695,16 @@ __metadata:
   linkType: hard
 
 "storybook-react-i18next@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "storybook-react-i18next@npm:3.2.1"
+  version: 3.3.1
+  resolution: "storybook-react-i18next@npm:3.3.1"
   dependencies:
     storybook-i18n: "npm:3.1.1"
   peerDependencies:
-    i18next: ^22.0.0 || ^23.0.0 || ^24.0.0
+    i18next: ^22.0.0 || ^23.0.0 || ^24.0.0 || ^25.0.0
     i18next-browser-languagedetector: ^7.0.0 || ^8.0.0
     i18next-http-backend: ^2.0.0 || ^3.0.0
     react-i18next: ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
-  checksum: 10c0/bc626f82eb2fc88ce3dc746cff3dbeb59022a3d843e5a082b77bb42f307e5c6b8890a2746e60cc9b1f8a3add2cd17461ee1d88b9ecb2f90e0c7d0df4605aefba
+  checksum: 10c0/54a0a747a7f1cc16b29c7aa52624c985c5782ec9579eb48d12427b01840e765e4a391dd69da427f3bf23defa29221fdee3084b31bbf5667d6211d52a76a69d61
   languageName: node
   linkType: hard
 
