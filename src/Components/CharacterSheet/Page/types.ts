@@ -1,4 +1,5 @@
-import { CreatureFacade } from '@wowfinder/model';
+import type { CreatureBase } from '@wowfinder/model';
+
 
 enum PageType {
     main = 'main',
@@ -6,18 +7,18 @@ enum PageType {
     inventory = 'inventory',
     magicScores = 'magicScores',
     spells = 'spells',
-    feral = 'feralForms',
-    travel = 'travelForms',
-    moonkin = 'moonkinForm',
-    tree = 'treeForm',
+    feralForms = 'feralForms',
+    travelForms = 'travelForms',
+    moonkinForm = 'moonkinForm',
+    treeForm = 'treeForm',
 }
 
 type CharProps = {
-    char?: CreatureFacade;
+    char?: CreatureBase;
 };
 
 type CharXpProps = CharProps & {
-    char?: CreatureFacade;
+    char?: CreatureBase;
     xp?: number;
 };
 

@@ -13,6 +13,13 @@ function expectExactExportFCs(module: {}, ...components: Function[]): void {
     expect(Object.keys(module).length).toBe(components.length);
 }
 
+function expectExactExports(module: {}, ...components: any[]): void {
+    components.forEach(component => {
+        expect(module[component]).toBeDefined();
+    });
+    expect(Object.keys(module).length).toBe(components.length);
+}
+
 function capFirst(val: string): string {
     return String(val).charAt(0).toUpperCase() + String(val).slice(1);
 }
@@ -58,6 +65,7 @@ function renderInTable(element: React.ReactElement): ReturnType<typeof render> {
 export {
     expectExportFC,
     expectExactExportFCs,
+    expectExactExports,
     capFirst,
     expectCellValue,
     expectInputValue,

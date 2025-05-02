@@ -44,7 +44,7 @@
         "@wowfinder/asset-schemas": "^0.0.21",
         "@wowfinder/model": "^0.0.24",
         "@wowfinder/translations": "^0.0.10",
-        "@wowfinder/ts-enums": "^0.0.24",
+        "@wowfinder/ts-enums": "^0.0.26",
         "@wowfinder/ts-utils": "^0.1.14",
         "globals": "^16.0.0",
         "react": "^19.1.0",

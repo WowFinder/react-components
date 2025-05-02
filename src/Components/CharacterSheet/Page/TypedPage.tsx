@@ -19,13 +19,13 @@ const pageTypes: { [keys in PageType]: React.FC<PageArgs> } = {
         () => <></>,
     /* TODO https://github.com/WowFinder/react-components/issues/152 */ [PageType.spells]:
         () => <></>,
-    /* TODO https://github.com/WowFinder/react-components/issues/153 */ [PageType.feral]:
+    /* TODO https://github.com/WowFinder/react-components/issues/153 */ [PageType.feralForms]:
         () => <></>,
-    /* TODO https://github.com/WowFinder/react-components/issues/154 */ [PageType.travel]:
+    /* TODO https://github.com/WowFinder/react-components/issues/154 */ [PageType.travelForms]:
         () => <></>,
-    /* TODO https://github.com/WowFinder/react-components/issues/155 */ [PageType.moonkin]:
+    /* TODO https://github.com/WowFinder/react-components/issues/155 */ [PageType.moonkinForm]:
         () => <></>,
-    /* TODO https://github.com/WowFinder/react-components/issues/156 */ [PageType.tree]:
+    /* TODO https://github.com/WowFinder/react-components/issues/156 */ [PageType.treeForm]:
         () => <></>,
 };
 
@@ -35,10 +35,10 @@ const defaultPages: FullPageSelection = {
     [PageType.inventory]: true,
     [PageType.magicScores]: true,
     [PageType.spells]: false,
-    [PageType.feral]: true,
-    [PageType.travel]: false,
-    [PageType.moonkin]: false,
-    [PageType.tree]: false,
+    [PageType.feralForms]: true,
+    [PageType.travelForms]: false,
+    [PageType.moonkinForm]: false,
+    [PageType.treeForm]: false,
 };
 
 function TypedPage<T extends CharXpProps = CharXpProps>({

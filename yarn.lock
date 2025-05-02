@@ -3303,7 +3303,7 @@ __metadata:
     "@wowfinder/asset-schemas": "npm:^0.0.21"
     "@wowfinder/model": "npm:^0.0.24"
     "@wowfinder/translations": "npm:^0.0.10"
-    "@wowfinder/ts-enums": "npm:^0.0.24"
+    "@wowfinder/ts-enums": "npm:^0.0.26"
     "@wowfinder/ts-utils": "npm:^0.1.14"
     c8: "npm:^10.1.3"
     chromatic: "npm:^11.28.2"
@@ -3365,6 +3365,15 @@ __metadata:
   dependencies:
     globals: "npm:^16.0.0"
   checksum: 10c0/12621d967f4aa715aaa3e088f28a7e7aa34c380ee400f109c7f6203689645b21673a578b9e66d53828d36494d28bad09fe2faed657c920fc5be2733ec8ed5ae6
+  languageName: node
+  linkType: hard
+
+"@wowfinder/ts-enums@npm:^0.0.26":
+  version: 0.0.26
+  resolution: "@wowfinder/ts-enums@npm:0.0.26"
+  dependencies:
+    globals: "npm:^16.0.0"
+  checksum: 10c0/31678d14447a7c77c4b15c9aa9aa940144d7b605e3b7e405c671e4ec06f0edee15714684a90a37c7c5c5668bd459a7339abf25c6a6ecf45a77c0705d481f436a
   languageName: node
   linkType: hard
 
