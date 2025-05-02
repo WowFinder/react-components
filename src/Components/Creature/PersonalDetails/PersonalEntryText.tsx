@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { borderless, bottomLine } from '../../../../../styles';
+import { borderless, bottomLine } from '../../../styles';
 import { PersonalEntry, PersonalItemProps } from './base';
 
 const sharedStyle = `

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { smallText } from '../../../../../styles';
+import { smallText } from '../../../styles';
 
 interface PersonalItemProps<T> {
     id: string;
