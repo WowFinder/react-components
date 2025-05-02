@@ -2,11 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { smallText } from '../../../styles';
 
-interface PersonalItemProps<T> {
+type SubRenderProps<T> = {
     id: string;
+    value?: T | null;
+};
+
+type PersonalItemProps<T> = SubRenderProps<T> & {
     label: string;
     width: number;
-    value?: T | null;
 }
 
 const Below = styled.span`
@@ -22,15 +25,18 @@ abstract class PersonalEntry<T> extends React.Component<PersonalItemProps<T>> {
             width: ${this.props.width}mm;
             margin: 0 1mm;
         `;
+        const { id, value } = this.props;
         return (
             <Label id={`lbl${this.props.id}`}>
-                {this.subRender(this.props)}
+                {this.subRender({
+                    id, value,
+                })}
                 <Below>{this.props.label}</Below>
             </Label>
         );
     }
 
-    abstract subRender(props: PersonalItemProps<T>): React.JSX.Element;
+    abstract subRender(props: SubRenderProps<T>): React.JSX.Element;
 }
 
 export { type PersonalItemProps, PersonalEntry };

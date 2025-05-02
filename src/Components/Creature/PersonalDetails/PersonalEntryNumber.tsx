@@ -13,7 +13,7 @@ const StyledInput = styled.input`
 
 class PersonalEntryNumber extends PersonalEntry<number> {
     subRender({ id, value }: PersonalItemProps<number>): React.JSX.Element {
-        const v = value != null ? value : '';
+        const v = value ?? '';
         return <StyledInput id={`txt${id}`} value={v} readOnly={true} />;
     }
 }
