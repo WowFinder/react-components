@@ -18,7 +18,10 @@ const mockRace = {
 } as Race;
 
 const mockChar = {
-    personal: personalDefaults,
+    personal: {
+        ...personalDefaults,
+        fullName: 'Test Character',
+    },
     race: mockRace,
 } as CreatureBase;
 

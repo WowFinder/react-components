@@ -3260,15 +3260,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wowfinder/model@npm:^0.0.24":
-  version: 0.0.24
-  resolution: "@wowfinder/model@npm:0.0.24"
+"@wowfinder/model@npm:^0.0.25":
+  version: 0.0.25
+  resolution: "@wowfinder/model@npm:0.0.25"
   dependencies:
     "@wowfinder/asset-schemas": "npm:^0.0.21"
-    "@wowfinder/ts-enums": "npm:^0.0.24"
+    "@wowfinder/ts-enums": "npm:^0.0.26"
     "@wowfinder/ts-utils": "npm:^0.1.14"
     globals: "npm:^16.0.0"
-  checksum: 10c0/d3d7ba799157986c8a89d0671842730e1637e9716cead364fb92ca15a857ecec46124145c46ba907f4ed1774bfd96223e086f7d553d1f16be75fc6ddadcd4f40
+  checksum: 10c0/fee7e15ae624bdc5bc8f3e9f93ffd5153ebadfd694ac406e4690671184aaca34b0a35181afa397bfa90645d32ad952e411f8bf6ff83aa9a5419a02fb9ab94bf0
   languageName: node
   linkType: hard
 
@@ -3301,7 +3301,7 @@ __metadata:
     "@typescript-eslint/utils": "npm:^8.31.1"
     "@vitest/coverage-v8": "npm:^3.1.2"
     "@wowfinder/asset-schemas": "npm:^0.0.21"
-    "@wowfinder/model": "npm:^0.0.24"
+    "@wowfinder/model": "npm:^0.0.25"
     "@wowfinder/translations": "npm:^0.0.10"
     "@wowfinder/ts-enums": "npm:^0.0.26"
     "@wowfinder/ts-utils": "npm:^0.1.14"
