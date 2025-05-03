@@ -31,7 +31,7 @@ class PersonalEntryTextCentered extends PersonalEntry<string> {
         return (
             <StyledInputCentered
                 id={`txt${id}`}
-                value={value || ''}
+                value={value ?? ''}
                 readOnly={true}
             />
         );

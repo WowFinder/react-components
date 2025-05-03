@@ -1,4 +1,3 @@
-// import { ReactNode } from 'react';
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
@@ -30,28 +29,26 @@ const ColumnDiv = styled.div`
 `;
 
 const Column: React.FC<{
-    key: string;
     id: string;
     children: ReactNode;
 }> = ({ id, children }) => (
     <ColumnDiv id={`column-${id}`}>{children}</ColumnDiv>
 );
 
-type ColumnProps = {
-    id?: string;
-    columns: {
-        key: string;
-        id: string;
-        children?: React.ReactNode;
+type ColumnsProps = {
+    readonly id?: string;
+    readonly columns: {
+        readonly id: string;
+        readonly children?: React.ReactNode;
     }[];
 };
 
-function Columns(props: ColumnProps): React.JSX.Element {
+function Columns(props: ColumnsProps): React.JSX.Element {
     const attrs: { id?: string } = props.id ? { id: props.id } : {};
     return (
         <ColumnsContainer {...attrs}>
             {props.columns.map(c => (
-                <Column key={c.key} id={c.id}>
+                <Column key={c.id} id={c.id}>
                     {c.children}
                 </Column>
             ))}
@@ -59,4 +56,4 @@ function Columns(props: ColumnProps): React.JSX.Element {
     );
 }
 
-export { type ColumnProps, Columns };
+export { type ColumnsProps, Columns };

@@ -1,6 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { PersonalEntryText, PersonalEntryTextCentered } from '../PersonalEntryText';
+import {
+    PersonalEntryText,
+    PersonalEntryTextCentered,
+} from '../PersonalEntryText';
 
 describe('PersonalEntryText', () => {
     it('renders with full args', () => {
@@ -28,13 +31,7 @@ describe('PersonalEntryText', () => {
         expect(screen.getByDisplayValue('')).toBeTruthy();
     });
     it('renders with no value', () => {
-        render(
-            <PersonalEntryText
-                id="test"
-                label="Test Label"
-                width={100}
-            />,
-        );
+        render(<PersonalEntryText id="test" label="Test Label" width={100} />);
         expect(screen.getByText('Test Label')).toBeTruthy();
         expect(screen.getByDisplayValue('')).toBeTruthy();
     });

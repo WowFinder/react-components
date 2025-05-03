@@ -1,11 +1,11 @@
 import React from 'react';
 import { vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { PersonalBlock, raceName } from '../PersonalBlock';
-import { Race, CreatureBase, personalDefaults } from '@wowfinder/model';
+import { CreatureBase, Race, personalDefaults } from '@wowfinder/model';
 import { expectInputValue } from '../../../../__tests__/helpers';
+import { PersonalBlock, raceName } from '../PersonalBlock';
 
-const mockTranslation: any = (key: string):string => key;
+const mockTranslation: any = (key: string): string => key;
 
 vi.mock('@wowfinder/translations', () => ({
     useTranslation: () => ({
@@ -30,7 +30,6 @@ describe('raceName', () => {
         expect(raceName(null, mockTranslation)).toBe('');
     });
     it('returns applies the correct translation key for an actual race object', () => {
-        
         const result = raceName(mockRace, mockTranslation);
         expect(result).toBe('races.testRace');
     });
@@ -59,7 +58,7 @@ function expectLabel(label: string): void {
 }
 
 function expectLabels(): void {
-    expectedLabels.forEach((label) => {
+    expectedLabels.forEach(label => {
         expectLabel(label);
     });
 }

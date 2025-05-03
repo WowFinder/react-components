@@ -5,8 +5,8 @@ import { Race } from '@wowfinder/model';
 import type { CharXpProps } from '../../CharacterSheet/Page/types';
 // TODO #459: Add support for drop-downs
 import {
-    PersonalEntryNumber,
     PersonalEntryBigNumber,
+    PersonalEntryNumber,
 } from './PersonalEntryNumber';
 import {
     PersonalEntryText,

@@ -9,7 +9,7 @@ import {
 } from '../../../styles';
 
 type PageStyledProps = {
-    visible: boolean;
+    readonly visible: boolean;
 };
 
 const PageStyled = styled.section<PageStyledProps>`
@@ -38,10 +38,9 @@ const PageStyled = styled.section<PageStyledProps>`
 `;
 
 type PageProps = {
-    key: string;
-    id: string;
-    visible?: boolean;
-    children: ReactNode;
+    readonly id: string;
+    readonly visible?: boolean;
+    readonly children: ReactNode;
 };
 
 function Page({ id, children, visible = true }: PageProps): React.JSX.Element {

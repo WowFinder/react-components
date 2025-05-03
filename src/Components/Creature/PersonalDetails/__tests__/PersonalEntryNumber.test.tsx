@@ -1,6 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { PersonalEntryNumber, PersonalEntryBigNumber } from '../PersonalEntryNumber';
+import {
+    PersonalEntryBigNumber,
+    PersonalEntryNumber,
+} from '../PersonalEntryNumber';
 
 describe('PersonalEntryNumber', () => {
     it('renders with full args', () => {
@@ -29,11 +32,7 @@ describe('PersonalEntryNumber', () => {
     });
     it('renders with no value', () => {
         render(
-            <PersonalEntryNumber
-                id="test"
-                label="Test Label"
-                width={100}
-            />,
+            <PersonalEntryNumber id="test" label="Test Label" width={100} />,
         );
         expect(screen.getByText('Test Label')).toBeTruthy();
         expect(screen.getByDisplayValue('')).toBeTruthy();
@@ -67,11 +66,7 @@ describe('PersonalEntryBigNumber', () => {
     });
     it('renders with no value', () => {
         render(
-            <PersonalEntryBigNumber
-                id="test"
-                label="Test Label"
-                width={100}
-            />,
+            <PersonalEntryBigNumber id="test" label="Test Label" width={100} />,
         );
         expect(screen.getByText('Test Label')).toBeTruthy();
         expect(screen.getByDisplayValue('')).toBeTruthy();
@@ -99,7 +94,9 @@ describe('PersonalEntryBigNumber', () => {
             />,
         );
         expect(screen.getByText('Test Label')).toBeTruthy();
-        const input = result.container.querySelector('#txttest') as HTMLInputElement;
+        const input = result.container.querySelector(
+            '#txttest',
+        ) as HTMLInputElement;
         expect(input).toBeDefined();
         expect(input).toBeInstanceOf(HTMLInputElement);
         expect(input.value).toBe('1 000 000Y');
