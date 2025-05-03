@@ -38,6 +38,4 @@ class PersonalEntryTextCentered extends PersonalEntry<string> {
     }
 }
 
-export default PersonalEntryText;
-
 export { PersonalEntryText, PersonalEntryTextCentered };

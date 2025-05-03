@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import { Race } from '@wowfinder/model';
 import type { CharXpProps } from '../../CharacterSheet/Page/types';
 // TODO #459: Add support for drop-downs
-import PersonalEntryNumber, {
+import {
+    PersonalEntryNumber,
     PersonalEntryBigNumber,
 } from './PersonalEntryNumber';
 import {
@@ -40,8 +41,8 @@ const PersonalBlock: React.FC<CharXpProps> = ({ char, xp = 0 }) => {
         (char && {
             charName: char.personal.fullName,
             align: char.personal.alignment,
-            tlevel: tlevel || 0,
-            xp: xp || 0,
+            tlevel,
+            xp,
             next,
             faith: char.personal.faith,
             origin: char.personal.origin,
@@ -146,4 +147,4 @@ const PersonalBlock: React.FC<CharXpProps> = ({ char, xp = 0 }) => {
     );
 };
 
-export { PersonalBlock };
+export { PersonalBlock, raceName };

@@ -1,5 +1,5 @@
 // TODO: Use a provider and context to handle this (https://github.com/WowFinder/react-components/issues/188)
-const debug = (process.env.NODE_ENV ?? '') === 'development';
+// const debug = (process.env.NODE_ENV ?? '') === 'development';
 
 interface DebugOutlineArgs {
     selector?: string;
@@ -12,13 +12,15 @@ const debugOutline = ({
     width = '1px',
     style = 'dashed',
     color = '#ccc',
-}: DebugOutlineArgs): string =>
-    debug
+}: DebugOutlineArgs): string => {
+    const debug = process.env.NODE_ENV === 'development';
+    return debug
         ? `@media screen {
         ${selector} {
             outline: ${width} ${style} ${color};
         }
     }`
         : '';
+};
 
 export { debugOutline };
