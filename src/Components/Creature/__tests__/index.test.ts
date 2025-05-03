@@ -10,6 +10,8 @@ describe('Creature components index', () => {
             Creature.InlineClasses,
             Creature.HitPoints,
             Creature.InlineHitPoints,
+            Creature.Initiative,
+            Creature.InlineInitiative,
             Creature.InlineResistances,
             Creature.ResistancesBlock,
             Creature.InlineSaves,
