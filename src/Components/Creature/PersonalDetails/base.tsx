@@ -10,7 +10,7 @@ type SubRenderProps<T> = {
 type PersonalItemProps<T> = SubRenderProps<T> & {
     label: string;
     width: number;
-}
+};
 
 const Below = styled.span`
     display: block;
@@ -29,7 +29,8 @@ abstract class PersonalEntry<T> extends React.Component<PersonalItemProps<T>> {
         return (
             <Label id={`lbl${this.props.id}`}>
                 {this.subRender({
-                    id, value,
+                    id,
+                    value,
                 })}
                 <Below>{this.props.label}</Below>
             </Label>

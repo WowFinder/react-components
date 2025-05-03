@@ -1,6 +1,5 @@
 import type { CreatureBase } from '@wowfinder/model';
 
-
 enum PageType {
     main = 'main',
     skills = 'skills',
