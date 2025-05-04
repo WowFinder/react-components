@@ -1,7 +1,7 @@
 import React from 'react';
 import { vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { CreatureBase, Race, personalDefaults } from '@wowfinder/model';
+import { CreatureFacade, Race, personalDefaults } from '@wowfinder/model';
 import { expectInputValue } from '../../../../__tests__/helpers';
 import { PersonalBlock, raceName } from '../PersonalBlock';
 
@@ -17,13 +17,19 @@ const mockRace = {
     key: 'testRace.123',
 } as Race;
 
+const mockPersonal = {
+    ...personalDefaults,
+    fullName: 'Test Character',
+};
+
 const mockChar = {
-    personal: {
-        ...personalDefaults,
-        fullName: 'Test Character',
+    fullProfile: {
+        personalDetails: mockPersonal,
     },
-    race: mockRace,
-} as CreatureBase;
+    intrinsicProfile: {
+        personalDetails: mockPersonal,
+    },
+} as CreatureFacade;
 
 describe('raceName', () => {
     it('returns empty string for null', () => {

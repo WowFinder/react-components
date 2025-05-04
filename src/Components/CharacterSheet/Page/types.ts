@@ -1,4 +1,4 @@
-import type { CreatureBase } from '@wowfinder/model';
+import { CreatureFacade } from '@wowfinder/model';
 
 enum PageType {
     main = 'main',
@@ -13,11 +13,10 @@ enum PageType {
 }
 
 type CharProps = {
-    char?: CreatureBase;
+    char?: CreatureFacade;
 };
 
 type CharXpProps = CharProps & {
-    char?: CreatureBase;
     xp?: number;
 };
 

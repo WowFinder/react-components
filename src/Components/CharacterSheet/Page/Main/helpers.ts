@@ -1,10 +1,12 @@
 import { RawStats } from '@wowfinder/asset-schemas';
 import {
-    CreatureBase,
+    CreatureFacade,
     ProgressionBonuses,
-    Speeds,
+    baseDefault,
     combineProgressionBonuses,
 } from '@wowfinder/model';
+import { SpeedsProfile, buildSpeedsProfile } from '@wowfinder/model/Profile';
+import { Counter } from '@wowfinder/ts-utils';
 import {
     type AttackScoresBlockProps,
     type MultiStats,
@@ -12,58 +14,63 @@ import {
 
 // TODO: Consider migrating logic to model
 
-function fullStats(char?: CreatureBase): MultiStats {
+function fullStats(char?: CreatureFacade): MultiStats {
     return [
         {
             key: 'base',
             isMod: false,
-            strength: char?.baseStats.strength ?? 0,
-            dexterity: char?.baseStats.dexterity ?? 0,
-            constitution: char?.baseStats.constitution ?? 0,
-            intelligence: char?.baseStats.intelligence ?? 0,
-            wisdom: char?.baseStats.wisdom ?? 0,
-            charisma: char?.baseStats.charisma ?? 0,
+            ...(char ? char.intrinsicProfile.statsProfile : baseDefault),
+        },
+        {
+            key: 'total',
+            isMod: false,
+            ...(char ? char.fullProfile.statsProfile : baseDefault),
         },
         // TODO: Add remaining columns (gear, racial, mods, ???)
-    ];
+    ] as const;
 }
 
-function getStatTotals(char?: CreatureBase): RawStats {
+function getStatTotals(char?: CreatureFacade): RawStats {
     const stats = fullStats(char);
     const total = stats.find((s: MultiStats[number]) => s.key === 'total');
     const base = stats.find((s: MultiStats[number]) => s.key === 'base');
-    // TODO: Handle exception case (or include asserts to ensure `total` exists)
-    return total ?? base ?? ({} as any);
+    return total ?? base ?? baseDefault;
 }
 
-const defaultSpeeds: Speeds = new Speeds({
-    base: 30,
+const defaultSpeeds: SpeedsProfile = buildSpeedsProfile({
+    baseSpeed: 30,
 });
 
-function getSpeeds(char?: CreatureBase): Speeds {
-    // TODO: Include bonuses
-    return char?.race.speeds ?? defaultSpeeds;
+function getSpeeds(char?: CreatureFacade): SpeedsProfile {
+    return char?.fullProfile.speedsProfile ?? defaultSpeeds;
 }
 
-function getBonuses(char?: CreatureBase): ProgressionBonuses {
+function getBonuses(char?: CreatureFacade): ProgressionBonuses {
     return combineProgressionBonuses(
-        (char?.classes ?? []).map(c => ({
+        (char?.fullProfile.progressionProfile.classes ?? []).map(c => ({
             progression: c.class,
             level: c.level,
         })),
     );
 }
 
-function getAttackScores(char?: CreatureBase): AttackScoresBlockProps {
+function getAttackScores(char?: CreatureFacade): AttackScoresBlockProps {
     return {
         baseAttackBonus: getBonuses(char).bab,
         stats: getStatTotals(char),
-        sizeModifier: char?.race.size ?? 0,
+        sizeModifier: char?.fullProfile.size ?? 0,
     };
 }
 
-function getHitPoints(char?: CreatureBase): number {
-    return getBonuses(char).hp;
+const defaultCounter: Counter = {
+    current: 0,
+    max: 0,
+    min: 0,
+    initial: 0,
+};
+
+function getHitPoints(char?: CreatureFacade): Counter {
+    return char?.fullProfile.vitalsProfile.hp ?? defaultCounter;
 }
 
 export { fullStats, getSpeeds, getAttackScores, getStatTotals, getHitPoints };

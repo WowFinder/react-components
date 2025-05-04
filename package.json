@@ -16,7 +16,7 @@
         "lint:fix": "eslint . --ext js,ts,jsx,tsx --fix",
         "format": "prettier --write --log-level=warn \"src/**/*.{js,ts,jsx,tsx,json,json5}\"",
         "format:check": "prettier --check \"src/**/*.{js,ts,jsx,tsx,json,json5}\"",
-        "precommit": "npm-run-all -s lint:fix format checks:pedantic",
+        "precommit": "npm-run-all -s lint:fix format test:coverage build skott:circular",
         "test": "vitest run",
         "test:coverage": "vitest run --coverage",
         "test:storybook": "test-storybook",

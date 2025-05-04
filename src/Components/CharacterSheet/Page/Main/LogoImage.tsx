@@ -11,19 +11,10 @@ const LogoImg = styled.img`
 
 type LogoImageProps = {
     readonly src: string;
-    readonly alt?: string;
-    readonly width?: number;
-    readonly height?: number;
 };
 
-const logoImageDefaultProps = {
-    alt: 'Logo',
-    width: 481,
-    height: 178,
-} as const;
-
-const LogoImage: FC<LogoImageProps> = props => {
-    return <LogoImg {...{ logoImageDefaultProps, ...props }} />;
+const LogoImage: FC<LogoImageProps> = ({ src }) => {
+    return <LogoImg src={src} />;
 };
 
 export { LogoImage, type LogoImageProps };

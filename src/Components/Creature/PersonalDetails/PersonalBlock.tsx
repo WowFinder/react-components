@@ -39,20 +39,21 @@ const PersonalBlock: React.FC<CharXpProps> = ({ char, xp = 0 }) => {
     const next = tlevel * (tlevel + 1) * 1000;
     const values =
         (char && {
-            charName: char.personal.fullName,
-            align: char.personal.alignment,
+            charName: char.fullProfile.personalDetails.fullName,
+            align: char.fullProfile.personalDetails.alignment,
             tlevel,
             xp,
             next,
-            faith: char.personal.faith,
-            origin: char.personal.origin,
-            race: raceName(char.race, t),
-            gender: char.personal.gender,
-            age: `${char.personal.age.fullYears}`,
-            height: `${char.personal.height.feetInches}`,
-            weight: `${char.personal.weight}`,
-            hair: char.personal.hair,
-            eyes: char.personal.eyes,
+            faith: char.fullProfile.personalDetails.faith,
+            origin: char.fullProfile.personalDetails.origin,
+            // ⚠️ race not currently exposed by CreatureFacade / CreatureProfile APIs in `model`
+            race: '',
+            gender: char.fullProfile.personalDetails.gender,
+            age: `${char.fullProfile.personalDetails.age.fullYears}`,
+            height: `${char.fullProfile.personalDetails.height.feetInches}`,
+            weight: `${char.fullProfile.personalDetails.weight}`,
+            hair: char.fullProfile.personalDetails.hair,
+            eyes: char.fullProfile.personalDetails.eyes,
         }) ||
         {};
     return (

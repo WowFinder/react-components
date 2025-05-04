@@ -64,7 +64,7 @@ function MainPage({ char, xp, visible = true }: PageArgs): JSX.Element {
                                     dexterity={getStatTotals(char).dexterity}
                                 />
                                 <Header>{t('charsheet.hitpoints.h')}</Header>
-                                <HitPoints base={getHitPoints(char)} />
+                                <HitPoints base={getHitPoints(char).initial} />
                                 <Header>{t('charsheet.traits.h')}</Header>
                                 <div>
                                     {/* TODO: add traits + feats list */} WiP
