@@ -20,7 +20,7 @@ type CharXpProps = CharProps & {
     xp?: number;
 };
 
-type PageArgs<T extends CharXpProps = CharXpProps> = T & { visible: boolean };
+type PageArgs<T extends CharXpProps = CharXpProps> = T & { visible?: boolean };
 
 type TypedPageArgs<T extends CharXpProps = CharXpProps> = PageArgs<T> & {
     type: PageType;

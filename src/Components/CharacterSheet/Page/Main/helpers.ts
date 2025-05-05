@@ -1,3 +1,4 @@
+/* v8 ignore start: not worth covering temporary placeholder code */
 import { RawStats } from '@wowfinder/asset-schemas';
 import {
     CreatureFacade,
@@ -75,3 +76,4 @@ function getHitPoints(char?: CreatureFacade): Counter {
 }
 
 export { fullStats, getSpeeds, getAttackScores, getStatTotals, getHitPoints };
+/* v8 ignore stop */

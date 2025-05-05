@@ -1,5 +1,5 @@
 import { TFunction } from 'i18next';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '@wowfinder/translations'
 import styled from 'styled-components';
 import { Race } from '@wowfinder/model';
 import type { CharXpProps } from '../../CharacterSheet/Page/types';
