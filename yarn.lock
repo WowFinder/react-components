@@ -3333,7 +3333,7 @@ __metadata:
     rxjs: "npm:^7.8.2"
     skott: "npm:^0.35.4"
     storybook: "npm:^8.6.12"
-    storybook-react-i18next: "npm:^3.3.1"
+    storybook-react-i18next: "npm:^4.0.1"
     styled-components: "npm:^6.1.17"
     ts-jest: "npm:^29.3.2"
     tsd: "npm:^0.32.0"
@@ -11080,24 +11080,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook-i18n@npm:3.1.1":
-  version: 3.1.1
-  resolution: "storybook-i18n@npm:3.1.1"
-  checksum: 10c0/03f80b1c51986564e16c4c9ceeea4257b6ce760b10dca01a2a12d61423c53e4b818327856fd71f83c2d1871747c30d801615dd0ed5acd698ff2b5aed755044da
+"storybook-i18n@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "storybook-i18n@npm:4.0.2"
+  peerDependencies:
+    storybook: ^9.0.0-beta.10
+  checksum: 10c0/407e2e7152e997cc0577456e090fd967a0eb17cd3276e83df267837285d92ccec9be8399bc8a736e7fc00a7f41c780f08cd78ae72ccc5e0cf470e80a9e38010f
   languageName: node
   linkType: hard
 
-"storybook-react-i18next@npm:^3.3.1":
-  version: 3.3.1
-  resolution: "storybook-react-i18next@npm:3.3.1"
+"storybook-react-i18next@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "storybook-react-i18next@npm:4.0.1"
   dependencies:
-    storybook-i18n: "npm:3.1.1"
+    storybook-i18n: "npm:^4.0.2"
   peerDependencies:
     i18next: ^22.0.0 || ^23.0.0 || ^24.0.0 || ^25.0.0
     i18next-browser-languagedetector: ^7.0.0 || ^8.0.0
     i18next-http-backend: ^2.0.0 || ^3.0.0
     react-i18next: ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
-  checksum: 10c0/54a0a747a7f1cc16b29c7aa52624c985c5782ec9579eb48d12427b01840e765e4a391dd69da427f3bf23defa29221fdee3084b31bbf5667d6211d52a76a69d61
+    storybook: ^9.0.0-beta.10
+  checksum: 10c0/1f5d392de5c882600378ed8d26736d0940dbbb506175426e115520f739d7241d67501e19d853dc22190e0a452c7ca72db6b1ef6bf4a0a567562091c73abc9bfd
   languageName: node
   linkType: hard
 
