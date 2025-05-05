@@ -2,10 +2,11 @@ import { RawStats } from '@wowfinder/asset-schemas';
 import {
     CreatureFacade,
     ProgressionBonuses,
+    type SpeedsProfile,
     baseDefault,
+    buildSpeedsProfile,
     combineProgressionBonuses,
 } from '@wowfinder/model';
-import { SpeedsProfile, buildSpeedsProfile } from '@wowfinder/model/Profile';
 import { Counter } from '@wowfinder/ts-utils';
 import {
     type AttackScoresBlockProps,

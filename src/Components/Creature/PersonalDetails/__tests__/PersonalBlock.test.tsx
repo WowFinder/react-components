@@ -60,7 +60,7 @@ const expectedLabels = [
 ] as const;
 
 function expectLabel(label: string): void {
-    expect(screen.getByText(`charsheet.char.personal.${label}`)).toBeTruthy();
+    expect(screen.getByText(`charsheet.personal.${label}`)).toBeTruthy();
 }
 
 function expectLabels(): void {

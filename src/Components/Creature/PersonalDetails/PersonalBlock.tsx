@@ -34,7 +34,7 @@ function raceName(race: Race | null, t: TFunction): string {
 const PersonalBlock: React.FC<CharXpProps> = ({ char, xp = 0 }) => {
     // TODO #460: insert values as they become available
     const { t } = useTranslation();
-    const label = (key: string): string => t(`charsheet.char.personal.${key}`);
+    const label = (key: string): string => t(`charsheet.personal.${key}`);
     const tlevel = Math.floor((1 + Math.sqrt(1 + (4 * xp) / 1000)) / 2);
     const next = tlevel * (tlevel + 1) * 1000;
     const values =

@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import { Speed, commonSpeedUnits } from '@wowfinder/model';
-import { SpeedsProfile } from '@wowfinder/model/Profile';
+import { Speed, type SpeedsProfile, commonSpeedUnits } from '@wowfinder/model';
 import { useTranslation } from '@wowfinder/translations';
 import {
     borderThick,
@@ -18,8 +17,9 @@ const StyledTable = styled.table`
     & th,
     & td,
     & input {
-        width: 11.5mm;
+        width: 11.0mm;
         text-align: center;
+        font-size: 10pt;
     }
     & td {
         ${borderThin}
@@ -60,7 +60,7 @@ type CellsProps = {
 
 const Cells: FC<CellsProps> = ({ hkey, name, speed }) => {
     const { t } = useTranslation();
-    const heading = t(`charsheet.speed.${hkey}`) ?? '';
+    const heading = t(`charsheet.speed.${hkey}`);
     return <SpeedCells {...{ name, speed, heading }} />;
 };
 

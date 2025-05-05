@@ -1,5 +1,4 @@
-import { Speed, commonSpeedUnits } from '@wowfinder/model';
-import { SpeedsProfile } from '@wowfinder/model/Profile';
+import { Speed, type SpeedsProfile, commonSpeedUnits } from '@wowfinder/model';
 import { FlyManeuverability } from '@wowfinder/ts-enums';
 import { Speeds } from '../../../Components/Creature';
 

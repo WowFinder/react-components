@@ -29,7 +29,7 @@ function MainPage({ char, xp, visible = true }: PageArgs): JSX.Element {
     return (
         <Page key="Main" id="main" visible={visible}>
             <div />
-            <LogoImage src="" />
+            <LogoImage src={null as any} />
             <PersonalBlock char={char} xp={xp} />
             <Columns
                 columns={[
@@ -37,17 +37,19 @@ function MainPage({ char, xp, visible = true }: PageArgs): JSX.Element {
                         id: 'MainLeft',
                         children: (
                             <>
+                                { /* TODO: Compute / retrieve full stats breadkdown */ }
                                 <MultiColumnStatsView data={fullStats(char)} />
-                                <Header>{t('charsheet.speed.h')}</Header>
-                                <Speeds speeds={getSpeeds(char)} />
+                                <Header>{t('charsheet.hitpoints.h')}</Header>
+                                <HitPoints base={getHitPoints(char).initial} />
                                 <Header>{t('charsheet.armor.h')}</Header>
-                                <DefenseScoresBlock values={undefined as any} />
+                                { /* TODO: Compute / retrieve values */}
+                                <DefenseScoresBlock />
                                 <Header>{t('charsheet.saves.h')}</Header>
-                                <SavesBlock saves={undefined as any} />
+                                { /* TODO: Compute / retrieve values */}
+                                <SavesBlock />
                                 <Header>{t('charsheet.resist.h')}</Header>
-                                <ResistancesBlock
-                                    resistances={undefined as any}
-                                />
+                                { /* TODO: Compute / retrieve values */}
+                                <ResistancesBlock />
                                 <Header>{t('charsheet.attack.h')}</Header>
                                 <AttackScoresBlock {...getAttackScores(char)} />
                             </>
@@ -63,8 +65,8 @@ function MainPage({ char, xp, visible = true }: PageArgs): JSX.Element {
                                 <Initiative
                                     dexterity={getStatTotals(char).dexterity}
                                 />
-                                <Header>{t('charsheet.hitpoints.h')}</Header>
-                                <HitPoints base={getHitPoints(char).initial} />
+                                <Header>{t('charsheet.speed.h')}</Header>
+                                <Speeds speeds={getSpeeds(char)} />
                                 <Header>{t('charsheet.traits.h')}</Header>
                                 <div>
                                     {/* TODO: add traits + feats list */} WiP

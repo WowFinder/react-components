@@ -22,8 +22,9 @@ const StyledTable = styled.table`
     & td,
     & input {
         box-sizing: border-box;
-        width: 12.5mm;
+        width: 10.5mm;
         text-align: center;
+        // font-size: 10pt;
         ${borderless}
     }
     & td {
@@ -44,7 +45,7 @@ const StyledTable = styled.table`
 
 type RowArgs = {
     readonly id: string;
-    readonly value: ResistanceBreakdown;
+    readonly value?: ResistanceBreakdown;
 };
 const Row: FC<RowArgs> = ({ id, value }) => {
     const { t } = useTranslation();
@@ -90,35 +91,37 @@ const Row: FC<RowArgs> = ({ id, value }) => {
 };
 
 type ResistancesBlockProps = {
-    readonly resistances: FullResistances;
+    readonly resistances?: FullResistances;
 };
 
 const ResistancesBlock: FC<ResistancesBlockProps> = ({ resistances }) => {
     const { t } = useTranslation();
-    const byType = breakdownByType(resistances);
+    const byType = resistances ? breakdownByType(resistances) : undefined;
     return (
         <StyledTable>
             <thead>
                 <tr id="trResistTitles">
                     <th></th>
                     <th>{t('charsheet.common.total')}</th>
-                    <th>{t('charsheet.common.enhancement')}</th>
                     <th>{t('charsheet.common.gear')}</th>
-                    <th>{t('charsheet.common.misc')}</th>
+                    <th>{t('charsheet.common.enhancement')}</th>
+                    <th>{t('charsheet.armor.defl')}</th>
+                    <th>{t('charsheet.armor.nat')}</th>
                     <th>{t('charsheet.common.temp')}</th>
+                    <th>{t('charsheet.common.misc')}</th>
                 </tr>
             </thead>
             <tbody>
-                <Row id="bludgeoning" value={byType.bludgeoning} />
-                <Row id="slashing" value={byType.slashing} />
-                <Row id="piercing" value={byType.piercing} />
-                <Row id="arcane" value={byType.arcane} />
-                <Row id="fire" value={byType.fire} />
-                <Row id="cold" value={byType.cold} />
-                <Row id="nature" value={byType.nature} />
-                <Row id="shadow" value={byType.shadow} />
-                <Row id="holy" value={byType.holy} />
-                <Row id="psychic" value={byType.psychic} />
+                <Row id="bludgeoning" value={byType?.bludgeoning} />
+                <Row id="slashing" value={byType?.slashing} />
+                <Row id="piercing" value={byType?.piercing} />
+                <Row id="arcane" value={byType?.arcane} />
+                <Row id="fire" value={byType?.fire} />
+                <Row id="cold" value={byType?.cold} />
+                <Row id="nature" value={byType?.nature} />
+                <Row id="shadow" value={byType?.shadow} />
+                <Row id="holy" value={byType?.holy} />
+                <Row id="psychic" value={byType?.psychic} />
             </tbody>
         </StyledTable>
     );
