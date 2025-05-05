@@ -1,7 +1,7 @@
 {
     "name": "@wowfinder/react-components",
     "type": "commonjs",
-    "version": "0.0.18",
+    "version": "0.0.19",
     "description": "React component library for the WowFinder apps",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
