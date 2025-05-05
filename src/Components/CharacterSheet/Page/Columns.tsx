@@ -36,17 +36,16 @@ const Column: React.FC<{
 );
 
 type ColumnsProps = {
-    readonly id?: string;
+    readonly id: string;
     readonly columns: {
         readonly id: string;
         readonly children?: React.ReactNode;
     }[];
 };
 
-function Columns(props: ColumnsProps): React.JSX.Element {
-    const attrs: { id?: string } = props.id ? { id: props.id } : {};
+function Columns({ id, ...props }: ColumnsProps): React.JSX.Element {
     return (
-        <ColumnsContainer {...attrs}>
+        <ColumnsContainer id={id}>
             {props.columns.map(c => (
                 <Column key={c.id} id={c.id}>
                     {c.children}

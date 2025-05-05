@@ -51,4 +51,4 @@ function Page({ id, children, visible = true }: PageProps): React.JSX.Element {
     );
 }
 
-export default Page;
+export { Page, type PageProps };

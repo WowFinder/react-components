@@ -13,7 +13,7 @@ import { DefenseScoresBlock } from '../../../Creature/Defense';
 import { PersonalBlock } from '../../../Creature/PersonalDetails';
 import { Header } from '../../../helpers/Header';
 import { Columns } from '../Columns';
-import Page from '../Page';
+import { Page } from '../Page';
 import { PageArgs } from '../types';
 import { LogoImage } from './LogoImage';
 import {
@@ -32,6 +32,7 @@ function MainPage({ char, xp, visible = true }: PageArgs): JSX.Element {
             <LogoImage src={null as any} />
             <PersonalBlock char={char} xp={xp} />
             <Columns
+                id="colsMain"
                 columns={[
                     {
                         id: 'MainLeft',
