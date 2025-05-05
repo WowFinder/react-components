@@ -83,7 +83,7 @@ const Row: FC<RowProps> = ({ idSuffix, label, value }) => {
 };
 
 type SavesBlockProps = {
-    readonly saves: SaveBreakdowns;
+    readonly saves?: SaveBreakdowns;
 };
 
 const SavesBlock: FC<SavesBlockProps> = ({ saves }) => {
@@ -106,17 +106,17 @@ const SavesBlock: FC<SavesBlockProps> = ({ saves }) => {
                 <Row
                     idSuffix="Fort"
                     label={t('charsheet.saves.abbr.fort')}
-                    value={saves.fortitude}
+                    value={saves?.fortitude}
                 />
                 <Row
                     idSuffix="Refl"
                     label={t('charsheet.saves.abbr.refl')}
-                    value={saves.reflexes}
+                    value={saves?.reflexes}
                 />
                 <Row
                     idSuffix="Will"
                     label={t('charsheet.saves.abbr.will')}
-                    value={saves.will}
+                    value={saves?.will}
                 />
             </tbody>
         </StyledTable>

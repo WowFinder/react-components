@@ -1,10 +1,6 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import {
-    Speed,
-    Speeds as SpeedsValues,
-    commonSpeedUnits,
-} from '@wowfinder/model';
+import { Speed, type SpeedsProfile, commonSpeedUnits } from '@wowfinder/model';
 import { useTranslation } from '@wowfinder/translations';
 import {
     borderThick,
@@ -21,8 +17,9 @@ const StyledTable = styled.table`
     & th,
     & td,
     & input {
-        width: 11.5mm;
+        width: 11mm;
         text-align: center;
+        font-size: 10pt;
     }
     & td {
         ${borderThin}
@@ -63,12 +60,12 @@ type CellsProps = {
 
 const Cells: FC<CellsProps> = ({ hkey, name, speed }) => {
     const { t } = useTranslation();
-    const heading = t(`charsheet.speed.${hkey}`) ?? '';
+    const heading = t(`charsheet.speed.${hkey}`);
     return <SpeedCells {...{ name, speed, heading }} />;
 };
 
 type SpeedsProps = {
-    readonly speeds: SpeedsValues;
+    readonly speeds: SpeedsProfile;
 };
 
 const zeroSpeed = new Speed({ value: 0, unit: commonSpeedUnits.feetTurn });
@@ -78,23 +75,39 @@ const Speeds: FC<SpeedsProps> = ({ speeds }) => {
         <StyledTable>
             <tbody>
                 <tr>
-                    <Cells hkey="base" name="Base" speed={speeds.base} />
+                    <Cells hkey="base" name="Base" speed={speeds.baseSpeed} />
                     <Cells
                         hkey="reduced"
                         name="Reduced"
-                        speed={speeds.encumbered}
+                        speed={speeds.reducedSpeed}
                     />
                 </tr>
                 <tr>
-                    <Cells hkey="fly" name="Fly" speed={speeds.fly} />
-                    <Maneuverability value={speeds.maneuverability} />
+                    <Cells
+                        hkey="fly"
+                        name="Fly"
+                        speed={speeds.flySpeed ?? zeroSpeed}
+                    />
+                    <Maneuverability value={speeds.flyManeuverability} />
                 </tr>
                 <tr>
-                    <Cells hkey="swim" name="Swim" speed={speeds.swim} />
-                    <Cells hkey="climb" name="Climb" speed={speeds.climb} />
+                    <Cells
+                        hkey="swim"
+                        name="Swim"
+                        speed={speeds.swimSpeed ?? zeroSpeed}
+                    />
+                    <Cells
+                        hkey="climb"
+                        name="Climb"
+                        speed={speeds.climbSpeed ?? zeroSpeed}
+                    />
                 </tr>
                 <tr>
-                    <Cells hkey="burrow" name="Burrow" speed={speeds.burrow} />
+                    <Cells
+                        hkey="burrow"
+                        name="Burrow"
+                        speed={speeds.burrowSpeed ?? zeroSpeed}
+                    />
                     <Cells hkey="misc" name="Misc" speed={zeroSpeed} />
                 </tr>
             </tbody>

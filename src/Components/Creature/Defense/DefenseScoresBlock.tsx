@@ -64,7 +64,7 @@ function DefensesHeadings({
 }
 
 type DefenseScoresBlockProps = {
-    readonly values: FullArmorValues;
+    readonly values?: FullArmorValues;
 };
 
 function DefenseScoresBlock({
@@ -83,13 +83,13 @@ function DefenseScoresBlock({
                 <ArmorRow
                     label={t('charsheet.armor.touch')}
                     idPrefix="AcTouch"
-                    values={values.touch}
+                    values={values?.touch}
                     skipPhysical={true}
                 />
                 <ArmorRow
                     label={t('charsheet.armor.flatf')}
                     idPrefix="AcFlat"
-                    values={values.flatFooted}
+                    values={values?.flatFooted}
                     skipEvasive={true}
                 />
             </tbody>
@@ -97,25 +97,33 @@ function DefenseScoresBlock({
             <tbody>
                 <tr>
                     <th>{t('charsheet.armor.cmd')}</th>
-                    <InputH id="txtCmdTotal" value={values.maneuverDefense} />
+                    <InputH id="txtCmdTotal" value={values?.maneuverDefense} />
                     <td>=10+</td>
-                    <InputCell id="txtCmdBab" value={values.baseAttack} />
-                    <InputCell id="txtCmdStr" value={values.strength} />
-                    <InputCell id="txtCmdDex" value={values.dexterity} />
-                    <InputCell id="txtCmdSize" value={values.size} />
+                    <InputCell id="txtCmdBab" value={values?.baseAttack} />
+                    <InputCell id="txtCmdStr" value={values?.strength} />
+                    <InputCell id="txtCmdDex" value={values?.dexterity} />
+                    <InputCell id="txtCmdSize" value={values?.size} />
                     <InputCell
                         id="txtCmdDeflect"
-                        value={values.deflection}
+                        value={values?.deflection}
                         hideZero={true}
                     />
                     <InputCell
                         id="txtCmdMisc"
-                        value={values.misc + values.miscEvasion}
+                        value={
+                            values
+                                ? values.misc + values.miscEvasion
+                                : undefined
+                        }
                         hideZero={true}
                     />
                     <InputCell
                         id="txtCmdTemp"
-                        value={values.temporary + values.temporaryEvasion}
+                        value={
+                            values
+                                ? values.temporary + values.temporaryEvasion
+                                : undefined
+                        }
                         hideZero={true}
                     />
                 </tr>

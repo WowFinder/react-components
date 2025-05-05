@@ -23,8 +23,10 @@ const DefenseScoresBlockTable = styled.table`
     & input {
         box-sizing: border-box;
         width: 7.8mm;
-        max-width: 7.8mm;
         text-align: center;
+    }
+    & th input {
+        width: 100%;
     }
     & input {
         font-size: 10pt;

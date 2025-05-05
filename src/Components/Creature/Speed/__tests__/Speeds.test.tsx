@@ -1,23 +1,14 @@
 import React from 'react';
 import { vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import {
-    Speed,
-    Speeds as SpeedValues,
-    commonSpeedUnits,
-} from '@wowfinder/model';
+import { Speed, type SpeedsProfile, commonSpeedUnits } from '@wowfinder/model';
 import { FlyManeuverability } from '@wowfinder/ts-enums';
+import { expectInputValue } from '../../../../__tests__/helpers';
 import { Speeds } from '../Speeds';
 
 vi.mock('@wowfinder/translations', () => ({
     useTranslation: () => ({
-        t: (key: string) => {
-            // Need to cover the cases where the key is not found, so we have to mock those as well
-            if (key === 'charsheet.speed.climb') {
-                return;
-            }
-            return key;
-        },
+        t: (key: string) => key,
     }),
 }));
 
@@ -25,44 +16,68 @@ const mkSpeed = (feetPerTurn: number): Speed => {
     return new Speed({ value: feetPerTurn, unit: commonSpeedUnits.feetTurn });
 };
 
-const defaultSpeeds = new SpeedValues({
-    base: mkSpeed(30),
-    swim: mkSpeed(15),
-    fly: mkSpeed(60),
-    climb: mkSpeed(10),
-    burrow: mkSpeed(5),
-    maneuverability: FlyManeuverability.good,
-});
+const minimalSpeeds: SpeedsProfile = {
+    baseSpeed: mkSpeed(30),
+    reducedSpeed: mkSpeed(20),
+    initiative: 0,
+};
+
+const fullSpeeds: SpeedsProfile = {
+    ...minimalSpeeds,
+    swimSpeed: mkSpeed(15),
+    flySpeed: mkSpeed(60),
+    climbSpeed: mkSpeed(10),
+    burrowSpeed: mkSpeed(5),
+    flyManeuverability: FlyManeuverability.good,
+};
 
 describe('Speeds', () => {
-    it('renders with a value', () => {
-        render(<Speeds speeds={defaultSpeeds} />);
+    it('renders with full values', () => {
+        const result = render(<Speeds speeds={fullSpeeds} />);
         expect(screen.getByText('charsheet.speed.base')).toBeTruthy();
-        expect(screen.getByDisplayValue('30')).toBeTruthy();
-        expect(screen.getByDisplayValue('9')).toBeTruthy();
-        expect(screen.getAllByDisplayValue('6').length).toBe(2);
+        expectInputValue(result, 'txtSpeedBaseFeet', '30');
+        expectInputValue(result, 'txtSpeedBaseMeters', '9');
+        expectInputValue(result, 'txtSpeedBaseSquares', '6');
         expect(screen.getByText('charsheet.speed.reduced')).toBeTruthy();
-        expect(screen.getByDisplayValue('20')).toBeTruthy();
-        // 20' converts to 6m, which is already checked above
-        expect(screen.getByDisplayValue('4')).toBeTruthy();
+        expectInputValue(result, 'txtSpeedReducedFeet', '20');
+        expectInputValue(result, 'txtSpeedReducedMeters', '6');
+        expectInputValue(result, 'txtSpeedReducedSquares', '4');
         expect(screen.getByText('charsheet.speed.fly')).toBeTruthy();
-        expect(screen.getByDisplayValue('60')).toBeTruthy();
-        expect(screen.getByDisplayValue('18')).toBeTruthy();
-        expect(screen.getByDisplayValue('12')).toBeTruthy();
+        expectInputValue(result, 'txtSpeedFlyFeet', '60');
+        expectInputValue(result, 'txtSpeedFlyMeters', '18');
+        expectInputValue(result, 'txtSpeedFlySquares', '12');
         expect(
             screen.getByDisplayValue('charsheet.speed.maneuverability.good'),
         ).toBeTruthy();
         expect(screen.getByText('charsheet.speed.swim')).toBeTruthy();
-        expect(screen.getByDisplayValue('15')).toBeTruthy();
-        expect(screen.getAllByDisplayValue('5').length).toBe(2);
-        expect(screen.getAllByDisplayValue('3').length).toBe(2);
-        // Can't directly check for the `climb` key because we are mocking it as empty
-        expect(screen.getByDisplayValue('10')).toBeTruthy();
-        // 10' converts to 3m, which is already checked above
-        expect(screen.getAllByDisplayValue('2').length).toBe(2);
+        expectInputValue(result, 'txtSpeedSwimFeet', '15');
+        expectInputValue(result, 'txtSpeedSwimMeters', '5');
+        expectInputValue(result, 'txtSpeedSwimSquares', '3');
+        expect(screen.getByText('charsheet.speed.climb')).toBeTruthy();
+        expectInputValue(result, 'txtSpeedClimbFeet', '10');
+        expectInputValue(result, 'txtSpeedClimbMeters', '3');
+        expectInputValue(result, 'txtSpeedClimbSquares', '2');
         expect(screen.getByText('charsheet.speed.burrow')).toBeTruthy();
-        // Value 5 is already checked above
-        // 5' converts to 2m, which is already checked above
-        expect(screen.getByDisplayValue('1')).toBeTruthy();
+        expectInputValue(result, 'txtSpeedBurrowFeet', '5');
+        expectInputValue(result, 'txtSpeedBurrowMeters', '2');
+        expectInputValue(result, 'txtSpeedBurrowSquares', '1');
+    });
+    it('renders with minimal values', () => {
+        const result = render(<Speeds speeds={minimalSpeeds} />);
+        expect(screen.getByText('charsheet.speed.base')).toBeTruthy();
+        expectInputValue(result, 'txtSpeedBaseFeet', '30');
+        expectInputValue(result, 'txtSpeedBaseMeters', '9');
+        expectInputValue(result, 'txtSpeedBaseSquares', '6');
+        expect(screen.getByText('charsheet.speed.reduced')).toBeTruthy();
+        expectInputValue(result, 'txtSpeedReducedFeet', '20');
+        expectInputValue(result, 'txtSpeedReducedMeters', '6');
+        expectInputValue(result, 'txtSpeedReducedSquares', '4');
+        ['Fly', 'Swim', 'Climb', 'Burrow'].forEach(speedTypeInfix => {
+            ['Feet', 'Meters', 'Squares'].forEach(unit => {
+                result.container.querySelectorAll(
+                    `#txtSpeed${speedTypeInfix}${unit}`,
+                ).length === 0;
+            });
+        });
     });
 });
