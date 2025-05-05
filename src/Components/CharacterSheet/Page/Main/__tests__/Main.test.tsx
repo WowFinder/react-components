@@ -15,7 +15,7 @@ function expectContainId(result: ReturnType<typeof render>, id: string): void {
     const element = elements[0] as HTMLElement;
     expect(element instanceof HTMLElement).toBe(true);
     expect(element.id).toBe(id);
-};
+}
 
 describe('Main', async () => {
     it('renders with basic props', async () => {

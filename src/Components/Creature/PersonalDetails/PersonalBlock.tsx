@@ -1,7 +1,7 @@
 import { TFunction } from 'i18next';
-import { useTranslation } from '@wowfinder/translations'
 import styled from 'styled-components';
 import { Race } from '@wowfinder/model';
+import { useTranslation } from '@wowfinder/translations';
 import type { CharXpProps } from '../../CharacterSheet/Page/types';
 // TODO #459: Add support for drop-downs
 import {

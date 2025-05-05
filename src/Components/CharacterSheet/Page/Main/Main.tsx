@@ -37,18 +37,18 @@ function MainPage({ char, xp, visible = true }: PageArgs): JSX.Element {
                         id: 'MainLeft',
                         children: (
                             <>
-                                { /* TODO: Compute / retrieve full stats breadkdown */ }
+                                {/* TODO: Compute / retrieve full stats breadkdown */}
                                 <MultiColumnStatsView data={fullStats(char)} />
                                 <Header>{t('charsheet.hitpoints.h')}</Header>
                                 <HitPoints base={getHitPoints(char).initial} />
                                 <Header>{t('charsheet.armor.h')}</Header>
-                                { /* TODO: Compute / retrieve values */}
+                                {/* TODO: Compute / retrieve values */}
                                 <DefenseScoresBlock />
                                 <Header>{t('charsheet.saves.h')}</Header>
-                                { /* TODO: Compute / retrieve values */}
+                                {/* TODO: Compute / retrieve values */}
                                 <SavesBlock />
                                 <Header>{t('charsheet.resist.h')}</Header>
-                                { /* TODO: Compute / retrieve values */}
+                                {/* TODO: Compute / retrieve values */}
                                 <ResistancesBlock />
                                 <Header>{t('charsheet.attack.h')}</Header>
                                 <AttackScoresBlock {...getAttackScores(char)} />

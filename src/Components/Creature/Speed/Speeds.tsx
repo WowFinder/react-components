@@ -17,7 +17,7 @@ const StyledTable = styled.table`
     & th,
     & td,
     & input {
-        width: 11.0mm;
+        width: 11mm;
         text-align: center;
         font-size: 10pt;
     }
