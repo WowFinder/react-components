@@ -3397,21 +3397,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wowfinder/ts-utils@npm:^0.1.14":
-  version: 0.1.14
-  resolution: "@wowfinder/ts-utils@npm:0.1.14"
+"@wowfinder/ts-utils@npm:^0.1.14, @wowfinder/ts-utils@npm:^0.1.16":
+  version: 0.1.18
+  resolution: "@wowfinder/ts-utils@npm:0.1.18"
   dependencies:
-    globals: "npm:^16.0.0"
-  checksum: 10c0/44e1c722e3a73c3e216cd74c87d1cfd282294493857e8f966eafae6165a46202cf0b25eed7873d40a93c3fa50143e54ca343e255e222046eef016ab9e022d82e
-  languageName: node
-  linkType: hard
-
-"@wowfinder/ts-utils@npm:^0.1.16":
-  version: 0.1.16
-  resolution: "@wowfinder/ts-utils@npm:0.1.16"
-  dependencies:
-    globals: "npm:^16.0.0"
-  checksum: 10c0/cc1db059cad150700878adce6ea0e17a48578d4881f19fbc53eacbf7575df9e7890260ed45d196df0d86b8f88888e562bffe3b07c76325a08d4ba7fc8e480dbe
+    globals: "npm:^16.1.0"
+  checksum: 10c0/6f764a2a37708630c0d5d7f30904528722d7e45931541e30ca34d49517466b01c5231e28e1f9efe35612b48ffdae7b4f4a9fb5932f6093b33bc4d3dce28a2df1
   languageName: node
   linkType: hard
 
@@ -6616,6 +6607,13 @@ __metadata:
   version: 16.0.0
   resolution: "globals@npm:16.0.0"
   checksum: 10c0/8906d5f01838df64a81d6c2a7b7214312e2216cf65c5ed1546dc9a7d0febddf55ffa906cf04efd5b01eec2534d6f14859a89535d1a68241832810e41ef3fd5bb
+  languageName: node
+  linkType: hard
+
+"globals@npm:^16.1.0":
+  version: 16.1.0
+  resolution: "globals@npm:16.1.0"
+  checksum: 10c0/51df6319b5b9e679338baf058ecf1125af0d3148b97e57592deabd65fca5c5dcdcca321d7589282bd6afbea9f5a40bc7329c746f46d56780813d7d1c457209a2
   languageName: node
   linkType: hard
 
